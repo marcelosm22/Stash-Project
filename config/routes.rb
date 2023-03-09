@@ -9,7 +9,7 @@
     resources :users, only: [:show]
     resources :forums do
       resources :ratings
-        resources :posts, only: [:create] do
+        resources :posts, only: [:create, :show] do
         resources :comments, only: [:create]
         end
     end
@@ -17,9 +17,9 @@
       resources :bookmarks, only: [:create]
       resources :ratings, only: [:create]
     end
-    resources :forums, only: [:destroy]
-    resources :ratings, only: [:destroy]
-    resources :posts, only: [:destroy]
-    resources :comments,only: [:destroy]
-    resources :bookmarks, only: [:destroy]
+      resources :forums, only: [:destroy]
+      resources :ratings, only: [:destroy]
+      resources :posts, only: [:destroy]
+      resources :comments,only: [:destroy]
+      resources :bookmarks, only: [:destroy]
   end
