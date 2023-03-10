@@ -10,7 +10,7 @@
     resources :forums do
         resources :ratings
         resources :posts, only: [:new, :create, :show] do
-        resources :comments, only: [:new, :create]
+        resources :comments, only: [:new, :create, :show]
         end
     end
     resources :lists do
