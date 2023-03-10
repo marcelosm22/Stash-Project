@@ -42,6 +42,8 @@ class ForumsController < ApplicationController
   end
 
   def destroy
+    # destroy first the bookmarks with the forum id
+    # destroy this bookmarks first "Bookmark.where(forum_id: params[:id])"
     @forum.destroy
     redirect_to forums_path, status: :see_other
   end
