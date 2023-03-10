@@ -1,0 +1,7 @@
+    <%= @list.title %>
+    <%= link_to "delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %>
+    <% @list.forums.each do |forum| %>
+      <% bookmark = Bookmark.find_by(list: @list  ) %>
+        <%= forum.title %>
+          <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %>
+    <% end %>
