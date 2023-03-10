@@ -1,0 +1,4 @@
+<%= link_to "Create a Forum but only for admins", new_forum_path %>
+<% @forums.each do |forum| %>
+  <h1><%= link_to forum.title, forum_path(forum)  %></h1>
+<% end %>

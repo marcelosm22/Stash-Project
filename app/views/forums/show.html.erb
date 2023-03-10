@@ -1,0 +1,8 @@
+<%= @forum.title %>
+<%= @forum.description %>
+<%= @forum.date %>
+<%= @forum.category %>
+<%= link_to "Edit", edit_forum_path(@forum) %>
+<%= link_to "Back to index", forums_path %>
+    <%#= link_to 'Delete forum only for admin', forum_path(@forum),
+  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
