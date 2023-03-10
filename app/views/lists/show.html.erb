@@ -4,4 +4,10 @@
       <% bookmark = Bookmark.find_by(list: @list  ) %>
         <%= forum.title %>
           <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %>
+            <%= link_to "add a new forum", new_list_bookmark_path(params[:id]) %>
     <% end %>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+<%= f.association :forum %>
+<%= f.submit %>
+<% end %>
+    <%= link_to "BACK", lists_path %>
