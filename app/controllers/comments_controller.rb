@@ -1,15 +1,20 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:new, :create]
+  before_action :set_comment, only: [:new, :create, :show]
+
+  def show
+    @comment = Comment.find(params[:id])
+  end
 
   def new
     @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new
+    @comment = Comment.new(comment_params)
     @comment.post = @post
+    @comment.user = current_user
     if @comment.save
-      redirect_to forum_path(@forum)
+      redirect_to post_path(@post)
     else
       render :new, status: :unprocessable_entity
     end

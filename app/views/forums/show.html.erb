@@ -14,8 +14,10 @@
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 
-
-
-<p> <% @posts.each do |post| %> </p>
-<p> <%= link_to post.content, forum_post_path(@forum, post) %> </p>
-<p> <% end %> </p>
+<% @posts.each do |post| %>
+<%= link_to forum_post_path(@forum, post) do %>
+<div class="post-card">
+  <p> <%= post.content %> </p>
+</div>
+<% end %>
+<% end %>

@@ -3,6 +3,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @posts = Post.where(forum_id: params[:id])
+    # @post = Post.new
+    # @comments = Comment.where(post_id: params[:id])
+    @comment = Comment.new
+
+    @comments = Comment.where(post_id: params[:id])
+
   end
 
   def new
