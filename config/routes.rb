@@ -8,10 +8,10 @@
     root to: "pages#home"
     resources :users, only: [:show]
     resources :forums do
-      resources :ratings
-      resources :posts, only: [:new, :create, :show] do
-      resources :comments, only: [:new, :create]
-      end
+        resources :ratings
+        resources :posts, only: [:new, :create, :show] do
+        resources :comments, only: [:new, :create]
+        end
     end
     resources :lists do
     resources :bookmarks, only: [:new, :create]
