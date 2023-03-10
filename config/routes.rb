@@ -9,17 +9,17 @@
     resources :users, only: [:show]
     resources :forums do
       resources :ratings
-        resources :posts, only: [:new, :create, :show] do
+      resources :posts, only: [:new, :create, :show] do
         resources :comments, only: [:create]
-        end
+      end
     end
-      resources :lists do
-      resources :bookmarks, only: [:create]
-      resources :ratings, only: [:create]
-    end
-      resources :forums, only: [:destroy]
-      resources :ratings, only: [:destroy]
-      resources :posts, only: [:destroy]
-      resources :comments,only: [:destroy]
-      resources :bookmarks, only: [:destroy]
+    resources :lists do
+    resources :bookmarks, only: [:new, :create]
+    resources :ratings, only: [:create]
+  end
+    resources :forums, only: [:destroy]
+    resources :ratings, only: [:destroy]
+    resources :posts, only: [:destroy]
+    resources :comments,only: [:destroy]
+    resources :bookmarks, only: [:destroy]
   end
