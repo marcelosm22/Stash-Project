@@ -1,0 +1,8 @@
+<h1>aloalo</h1>
+
+<%= @user.username %>
+
+<% @ratings.each do |rating|%>
+<%= rating.score %>
+<%= rating.review_content %>
+<% end %>
