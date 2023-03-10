@@ -12,8 +12,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.forum = @forum
+    @post.user = current_user
     if @post.save
-      redirect_to forum_post(@forum)
+      redirect_to forum_path(@forum)
     else
       render :new, status: :unprocessable_entity
     end
