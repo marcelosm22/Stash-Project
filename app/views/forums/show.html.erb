@@ -6,18 +6,45 @@
 <p><%= link_to "Back to index", forums_path %></p>
 
 
+<%= simple_form_for [@forum, @rating] do |f| %>
+  <%= f.input :score, collection: 1..10 %>
+  <%= f.submit "Rate", class: "btn btn-primary" %>
+<% end %>
+
+
+<%# Average Score Method %>
+
+<% ratings_array = [] %>
+<% @ratings.each do |rating| %>
+<% ratings_array << rating.score %>
+<% end %>
+<% rating_sum = ratings_array.sum  %>
+<% number_of_ratings = @ratings.length %>
+<% if number_of_ratings >= 1 %>
+<% average_score = rating_sum / number_of_ratings %>
+<%= average_score.round(2) %>
+<% else %>
+<% end %>
+
+
+
+<% @ratings.each do |rating| %>
+<%= link_to rating.score, forum_rating_path(@forum, rating), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+<% end  %>
+
+
     <%#= link_to 'Delete forum only for admin', forum_path(@forum),
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-
 <%= simple_form_for [@forum, @post] do |f| %>
   <%= f.input :content %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 
+
 <% @posts.each do |post| %>
 <%= link_to forum_post_path(@forum, post) do %>
 <div class="post-card">
-  <p> <%= post.content %> </p>
+<p><%= post.content %></p>
 </div>
 <% end %>
 <% end %>

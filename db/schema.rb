@@ -63,7 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_174326) do
 
   create_table "ratings", force: :cascade do |t|
     t.float "score"
-    t.string "review_content"
     t.bigint "user_id", null: false
     t.bigint "forum_id", null: false
     t.datetime "created_at", null: false

@@ -1,7 +1,13 @@
-<h1>aloalo</h1>
+<h1>User Dashboard</h1>
 
-<%= @user.username %>
+<p><%= @user.username %></p>
+
 
 <% @lists.each do |list|%>
-<%= list.title %>
+<p><%= link_to list.title, list_path(list)%></p>
+<% end %>
+
+<%= simple_form_for @list do |f| %>
+<%= f.input :title, placeholder: 'My List' %>
+<%= f.submit "Create a list" %>
 <% end %>
