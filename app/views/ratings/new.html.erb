@@ -1,0 +1,5 @@
+<%= simple_form_for @rating do |f| %>
+  <%= f.input :score %>
+  <%= f.input :review_content %>
+  <%= f.submit "Rate", class: "btn btn-primary" %>
+<% end %>

@@ -1,13 +1,5 @@
 class RatingsController < ApplicationController
-  before_action :set_ratings, only: [:new, :create, :edit, :update, :show]
-
-  def index
-    @ratings = Rating.all
-  end
-
-  def show
-    @rating = Rating.find(params[:id])
-  end
+  before_action :set_ratings, only: [:new, :create, :edit, :update]
 
   def new
     @rating = Rating.new
@@ -37,7 +29,7 @@ class RatingsController < ApplicationController
   def destroy
     @rating = Rating.find(params[:id])
     @rating.destroy
-    redirect_to ratings_path
+    redirect_to forum_path(@rating.forum)
   end
 
   private
@@ -47,6 +39,6 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:score, :user_id, :review_content)
+    params.require(:rating).permit(:score, :user_id)
   end
 end
