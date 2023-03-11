@@ -6,6 +6,16 @@
 <p><%= link_to "Back to index", forums_path %></p>
 
 
+<%= simple_form_for [@forum, @rating] do |f| %>
+  <%= f.input :score %>
+  <%= f.submit "Rate", class: "btn btn-primary" %>
+<% end %>
+
+<% @ratings.each do |rating| %>
+<%= rating.score %>
+<% end %>
+
+
     <%#= link_to 'Delete forum only for admin', forum_path(@forum),
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 
