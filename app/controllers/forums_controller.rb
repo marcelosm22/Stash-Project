@@ -9,17 +9,18 @@ class ForumsController < ApplicationController
   end
 
   def index
-    @forums = Forum.all
+    if params[:query].present?
+      # sql_query = "title ILIKE :query OR description ILIKE :query OR category ILIKE :query"
+      sql_query = <<~SQL
+        forums.title @@ :query
+        OR forums.description @@ :query
+        OR forums.category @@ :query
+      SQL
+      @forums = Forum.where(sql_query, query: "%#{params[:query]}")
+    else
+      @forums = Forum.all
+    end
   end
-
-  # def index
-  #   if params[:query].present?
-  #     sql_query = "title ILIKE :query OR description ILIKE :query OR date ILIKE :query"
-  #     @forums = Forum.where(sql_query, query: "%#{params[:query]}")
-  #   else
-  #     @forums = Forum.all
-  #   end
-  # end
 
   def new
     @forum = Forum.new
