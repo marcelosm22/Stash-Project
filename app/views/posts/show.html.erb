@@ -1,0 +1,12 @@
+<%= @post.content %>
+
+<%= simple_form_for [@forum, @post, @comment] do |f| %>
+  <%= f.input :comment_content %>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>
+
+
+
+<% @comments.each do |comment| %>
+<%= comment.comment_content %>
+<% end %>

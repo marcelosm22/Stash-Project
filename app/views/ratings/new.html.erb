@@ -1,11 +1,5 @@
-<h1>Create a new rating</h1>
-
-<%= form_for @rating do |f| %>
-<%= f.label :score %>
-<%= f.number_field :score %>
-
-<%= f.label :review_content %>
-<%= f.text_field :review_content %>
-
-<%= f.submit %>
+<%= simple_form_for @rating do |f| %>
+  <%= f.input :score %>
+  <%= f.input :review_content %>
+  <%= f.submit "Rate", class: "btn btn-primary" %>
 <% end %>

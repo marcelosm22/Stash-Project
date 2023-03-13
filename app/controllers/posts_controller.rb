@@ -3,6 +3,13 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # @posts = Post.where(forum_id: params[:id])
+    # @post = Post.new
+    # @comments = Comment.where(post_id: params[:id])
+    @comment = Comment.new
+
+    @comments = Comment.where(post_id: params[:id])
+
   end
 
   def new
@@ -12,8 +19,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.forum = @forum
+    @post.user = current_user
     if @post.save
-      redirect_to forum_post(@forum)
+      redirect_to forum_path(@forum)
     else
       render :new, status: :unprocessable_entity
     end

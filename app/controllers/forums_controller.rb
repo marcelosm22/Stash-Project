@@ -1,6 +1,11 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
   def show
+    @posts = Post.where(forum_id: params[:id])
+    @post = Post.new
+    @ratings = Rating.where(forum_id: params[:id])
+    @rating = Rating.new
+    @comment = Comment.new
   end
 
   def index
