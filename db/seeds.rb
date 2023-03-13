@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-puts "creating users"
+
 User.create(
   username: "antonio",
   password: "123456",
@@ -28,13 +28,13 @@ User.create(
   password: "123456",
   email: "ruda@gmail.com"
 )
-puts "creating forums"
+
 
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726454/movie%20posters/everything-everywhere-all-at-once-movie-poster_gufrmk.jpg")
 forum_1 = Forum.new(title: "Everything Everywhere All At Once", creator: "Daniel KwanDaniel Scheinert", year: "2022", category: "Movies" )
 forum_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_1.save!
+forum_1.save
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726506/movie%20posters/harry-potter-and-the-order-of-the-phoenix-movie-poster_defzfx.jpg")
 forum_2 = Forum.new(title: "Harry Potter and the Order of the Phoenix", creator: "David Yates", year: "2007", category: "Movies" )

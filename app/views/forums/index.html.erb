@@ -1,4 +1,9 @@
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
+
+<div class="index-grid">
+
 <% @forums.each do |forum| %>
-  <h1><%= link_to forum.title, forum_path(forum)  %></h1>
+<%= cl_image_tag forum.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+</div>
