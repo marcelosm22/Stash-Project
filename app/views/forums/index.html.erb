@@ -1,4 +1,14 @@
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
+
+<%= form_with url: forums_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Search for anything"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <% @forums.each do |forum| %>
-  <h1><%= link_to forum.title, forum_path(forum)  %></h1>
+  <h1><%= link_to forum.title, forums_path  %></h1>
 <% end %>
