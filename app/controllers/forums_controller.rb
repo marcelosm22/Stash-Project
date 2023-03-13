@@ -13,7 +13,7 @@ class ForumsController < ApplicationController
       # sql_query = "title ILIKE :query OR description ILIKE :query OR category ILIKE :query"
       sql_query = <<~SQL
         forums.title @@ :query
-        OR forums.description @@ :query
+        OR forums.creator @@ :query
         OR forums.category @@ :query
       SQL
       @forums = Forum.where(sql_query, query: "%#{params[:query]}")
