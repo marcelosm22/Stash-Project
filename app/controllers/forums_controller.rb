@@ -61,6 +61,6 @@ class ForumsController < ApplicationController
   end
 
   def forum_params
-    params.require(:forum).permit(:title, :description, :date, :category)
+    params.require(:forum).permit(:title, :creator, :year, :category, :photo)
   end
 end

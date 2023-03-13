@@ -1,6 +1,10 @@
+<%= cl_image_tag @forum.photo.key, height: 400, width: 300 %>
+
+
+
 <p><%= @forum.title %></p>
-<p> <%= @forum.description %> </p>
-<p><%= @forum.date %> </p>
+<p> <%= @forum.creator %> </p>
+<p><%= @forum.year %> </p>
 <p> <%= @forum.category %></p>
 <p> <%= link_to "Edit", edit_forum_path(@forum) %></p>
 <p><%= link_to "Back to index", forums_path %></p>

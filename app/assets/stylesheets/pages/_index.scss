@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
-@import "home";
+
+.index-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+row-gap: 20px;
+column-gap: 20px;
+}

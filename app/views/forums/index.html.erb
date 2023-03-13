@@ -9,6 +9,10 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
+<div class="index-grid">
+
 <% @forums.each do |forum| %>
-  <h1><%= link_to forum.title, forums_path  %></h1>
+<%= cl_image_tag forum.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+
+</div>
