@@ -42,9 +42,22 @@
 
 
 <% @posts.each do |post| %>
-<%= link_to forum_post_path(@forum, post) do %>
-<div class="post-card">
-<p><%= post.content %></p>
-</div>
-<% end %>
+  <%= link_to forum_post_path(@forum, post) do %>
+  <div class="post-card">
+    <p><%= post.content %></p>
+  </div>
+  <% end %>
+
+  <% post.id %>
+  <% top_comments = Comment.where(post: post.id).last(5) %>
+  <% top_comments.each do |comment| %>
+    <p><%= comment.comment_content %></p>
+  <% end %>
+
+  <%= simple_form_for [@forum, post, @comment] do |f| %>
+  <%= f.input :comment_content %>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+  <% end %>
+
+
 <% end %>
