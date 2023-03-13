@@ -7,8 +7,8 @@ class Forum < ApplicationRecord
   validates :title, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_description_and_category,
-  against: [ :title, :description, :category],
+  pg_search_scope :search_by_title_and_creator_and_category,
+  against: [ :title, :creator, :category],
   using: {
     tsearch: { prefix: true }
   }
