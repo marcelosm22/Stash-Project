@@ -63,8 +63,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_153911) do
 
   create_table "forums", force: :cascade do |t|
     t.string "title"
-    t.string "creator"
-    t.integer "year"
+    t.text "description"
+    t.date "date"
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
