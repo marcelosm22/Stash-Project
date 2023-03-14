@@ -104,7 +104,7 @@
 .c100.p99 .fill,
 .c100.p100 .fill {
   position: absolute;
-  border: 0.08em solid #307bbb;
+  border: 0.08em solid #989898;
   width: 0.84em;
   height: 0.84em;
   clip: rect(0em, 0.5em, 1em, 0em);
@@ -246,6 +246,9 @@
 .c100.big {
   font-size: 240px;
 }
+.c100.medium{
+  font-size: 180px;
+}
 .c100.small {
   font-size: 80px;
 }
@@ -263,7 +266,7 @@
   width: 5em;
   line-height: 5em;
   font-size: 0.2em;
-  color: #cccccc;
+  color: #000000;
   display: block;
   text-align: center;
   white-space: nowrap;
@@ -1016,7 +1019,7 @@
   width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #ffffff;
+  color: #000000;
 }
 .c100:hover:after {
   top: 0.04em;
@@ -1066,6 +1069,9 @@
 .c100.orange:hover > span {
   color: #dd9d22;
 }
+
+
+
 .c100.orange.dark .bar,
 .c100.orange.dark .fill {
   border-color: #e08833 !important;
