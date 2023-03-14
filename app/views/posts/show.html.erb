@@ -1,12 +1,34 @@
-<%= @post.content %>
 
-<%= simple_form_for [@forum, @post, @comment] do |f| %>
-  <%= f.input :comment_content %>
-  <%= f.submit "Comment", class: "btn btn-primary" %>
-<% end %>
+<div class="background-color">
+  <div class="post-all-comments">
+    <div class="post-content-box">
+      <div class="post-user">
+        <p>@<%= User.find(@post.user_id).username %></p>
+      </div>
+      <div class="post-content-text">
+        <%= @post.content %>
+      </div>
+    </div>
+
+    <div class="comment-section">
+      <%= simple_form_for [@forum, @post, @comment] do |f| %>
+        <%= f.input :comment_content %>
+        <%= f.submit "Comment", class: "btn btn-primary" %>
+      <% end %>
+    </div>
 
 
 
-<% @comments.each do |comment| %>
-<%= comment.comment_content %>
-<% end %>
+    <% @comments.reverse.each do |comment| %>
+    <div class="display-comment">
+      <div class="display-comment-user">
+        <p>@<%= User.find(comment.user_id).username %></p>
+      </div>
+      <div class="display-comment-content">
+        <p><%= comment.comment_content %></p>
+      </div>
+    </div>
+    <%#= raise %>
+    <% end %>
+  </div>
+</div>
