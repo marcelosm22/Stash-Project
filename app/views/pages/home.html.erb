@@ -1,27 +1,11 @@
+<h2> ↑ Trending Right Now </h2>
 
-
-   <div class="c100 p100 small green">
-          <span>Trending</span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-  </div>
-
-
-<div class="home-movie-div">
-<% @forums.sample(4).each do |forum| %>
-<div class="home-movie-card-img">
-<%= link_to forum_path(forum) do %>
-<%= cl_image_tag (forum.photo.key).to_s, height: 450, width: 250, crop: :fill %>
+<div class="home-grid">
+<% @forums.each do |forum| %>
+<% if forum.category == "Movies" %>
+<div class="home-top-img">
+<%= cl_image_tag forum.photo.key, height: 350, width: 200 %>
+</div>
 <% end %>
-</div>
- <% end %>
-</div>
-
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/djbdn9bdv/image/upload/v1678141077/Outfit-Hub/photo-1626781309887-cdfb9f258c64_qzoopp.jpg;">
-  <div class="container">
-    <button class="banner-button">Explore</button>
-    </div>
+<% end %>
 </div>

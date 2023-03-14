@@ -1,39 +1,9 @@
 // Specific CSS for your home-page
-.home-movie-div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.home-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
+.home-top-img {
+margin-right: 0;
 }
-
-.banner h1 {
-  margin: 60;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  margin: 10px;
-  width: 300px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.banner-button {
-  text-decoration: none;
-  background-color: black;
-  color: whitesmoke;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  }
