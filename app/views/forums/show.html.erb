@@ -82,10 +82,7 @@
 
 
 
-<%= simple_form_for [@forum, @rating] do |f| %>
-  <%= f.input :score, collection: 1..10 %>
-  <%= f.submit "Rate", class: "btn btn-primary" %>
-<% end %>
+
 
 
 
@@ -95,29 +92,53 @@
 
     <%#= link_to 'Delete forum only for admin', forum_path(@forum),
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-<%= simple_form_for [@forum, @post] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
 
+<div class="post-comments-section">
+  <%= simple_form_for [@forum, @rating] do |f| %>
+    <%= f.input :score, collection: 1..10 %>
+    <%= f.submit "Rate", class: "btn btn-primary" %>
+  <% end %>
 
-<% @posts.each do |post| %>
-  <%= link_to forum_post_path(@forum, post) do %>
-  <div class="post-card">
-    <p><%= post.content %></p>
+  <div class="post-comment-form">
+    <%= simple_form_for [@forum, @post] do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Create a Post", class: "btn btn-primary" %>
+    <% end %>
   </div>
+  <hr size="10">
+
+  <% @posts.reverse.each do |post| %>
+    <%= link_to forum_post_path(@forum, post) do %>
+    <div class="post-content-box">
+      <div class="post-user">
+        <p>@<%= User.find(post.user_id).username %></p>
+      </div>
+      <div class="post-content-text">
+        <p><%= post.content %></p>
+      </div>
+
+    </div>
+    <% end %>
+
+    <% post.id %>
+    <% top_comments = Comment.where(post: post.id).last(5) %>
+    <% top_comments.each do |comment| %>
+      <div class="display-comment">
+        <div class="display-comment-user">
+          <p>@<%= User.find(comment.user_id).username %></p>
+        </div>
+        <div class="display-comment-content">
+          <p><%= comment.comment_content %></p>
+        </div>
+      </div>
+    <% end %>
+
+    <%= simple_form_for [@forum, post, @comment] do |f| %>
+    <%= f.input :comment_content %>
+    <%= f.submit "Comment", class: "btn btn-primary" %>
+    <% end %>
+    <hr size="10">
+
+
   <% end %>
-
-  <% post.id %>
-  <% top_comments = Comment.where(post: post.id).last(5) %>
-  <% top_comments.each do |comment| %>
-    <p><%= comment.comment_content %></p>
-  <% end %>
-
-  <%= simple_form_for [@forum, post, @comment] do |f| %>
-  <%= f.input :comment_content %>
-  <%= f.submit "Comment", class: "btn btn-primary" %>
-  <% end %>
-
-
-<% end %>
+</div>
