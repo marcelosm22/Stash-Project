@@ -1,5 +1,7 @@
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
 
+
+
 <%= form_with url: forums_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
@@ -9,10 +11,14 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
+
 <div class="index-grid">
 
+
 <% @forums.each do |forum| %>
-<%= cl_image_tag forum.photo.key, height: 300, width: 400, crop: :fill %>
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 300, width: 200 %>
+<% end %>
 <% end %>
 
 </div>

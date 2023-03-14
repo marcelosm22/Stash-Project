@@ -4,7 +4,9 @@
 <% @forums.each do |forum| %>
 <% if forum.category == "Movies" %>
 <div class="home-top-img">
+<%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 350, width: 200 %>
+<% end %>
 </div>
 <% end %>
 <% end %>
