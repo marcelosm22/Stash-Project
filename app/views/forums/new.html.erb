@@ -1,6 +1,7 @@
 <%= simple_form_for @forum do |f| %>
   <%= f.input :photo, as: :file %>
   <%= f.input :title %>
+  <%= f.input :creator %>
   <%= f.input :year %>
   <%= f.input :category %>
   <%= f.submit "Create a forum"%>
