@@ -1,0 +1,27 @@
+.lists_list
+{
+  position: relative;
+  width: 450px;
+  margin: 100px auto 0;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+  box-shadow: inset 0 0 15px whitesmoke;
+}
+
+.list_item_list
+{
+text-decoration: none;
+display: flex;
+background: white;
+padding: 10px 20px;
+color: darkgrey;
+margin: 5px 0;
+transition: .5s;
+}
+
+.list_item_list:hover
+{
+  transform: scale(1.07);
+  background: lightgrey;
+}
