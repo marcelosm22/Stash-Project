@@ -6,6 +6,7 @@ margin-right: 200px;
 
 
 .forum-show-title {
+font-family: 'Carter One', cursive;
 font-size: 35px;
 font-weight: bold;
 margin-bottom: 50px;
@@ -22,4 +23,21 @@ margin-bottom: 50px;
 
 .div-middle-forum-top {
 margin-left: 40px;
+}
+
+.add-list-forum-show-button {
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 10px;
+padding-bottom: 10px;
+color: black;
+font-size: 30px;
+font-family: 'Carter One', cursive;
+font-weight: bold;
+border-radius: 20px;
+background-color: rgb(44, 132, 180);
+}
+
+.forum-show-buttons {
+margin-left: 50px;
 }
