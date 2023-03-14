@@ -1,4 +1,6 @@
-    <% @lists.each do |list| %>
-    <%= link_to list.title, list_path(list) %>
-    <% end %>
-    <%= link_to "Create a new List", new_list_path %>
+<ul class= "lists_list"><% @lists.each do |list| %>
+  <li class= "list_item_list"><%= link_to list.title, list_path(list) %>
+  <%= list.forums.size %>
+  <% end %></li>
+</ul>
+<p><%= link_to "Create a new List", new_list_path %></p>
