@@ -2,12 +2,13 @@
    <ul class= "lists_list"><% @list.forums.each do |forum| %>
       <% bookmark = Bookmark.find_by(list: @list  ) %>
         <li class= "list_item_list"><p><%= link_to forum.title, forum_path(params[:id]) %>
-          <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %></li>
+          <%= link_to "Remove", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %></li>
     <% end %></ul>
 <%= simple_form_for [@list, @bookmark] do |f| %>
 <%= f.association :forum %>
 <%= f.submit "Add a new an item"%>
 <% end %>
-    <%= link_to "BACK", lists_path %>
 
-<p><%= link_to "delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
+<p><%= button_to "BACK", lists_path %></p>
+
+<p><%= button_to "Delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
