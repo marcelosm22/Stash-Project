@@ -13,24 +13,22 @@
 <% end %>
 
 
+<% case %>
+<% when @forum.category == "Music" %>
 
-
-
-<div class="forum-flex-top-show">
-
+<div class="forum-page-show-top">
 <div class="forum-show-img">
-<% if @forum.category == "Music" %>
-<%= cl_image_tag @forum.photo.key, height: 200, width: 200 %>
-<% elsif @forum.category == "TV Show" %>
-<%= cl_image_tag @forum.photo.key, height: 400, width: 300 %>
-<% else %>
-<%= cl_image_tag @forum.photo.key, height: 400, width: 300 %>
-<% end %>
+<%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
 </div>
 
-<div class="div-middle-forum-top">
+
+<div class="forum-show-description">
 <p class="forum-show-title"><%= @forum.title %></p>
-<div class="forum-show-rating-description-container">
+<p class="forum-show-year"><%= @forum.year %></p>
+<p class="forum-show-category"><%= @forum.category %></p>
+<p class="forum-show-creator"><%= @forum.creator %></p>
+</div>
+
 <div class="rating-circle">
 <% if rounded_average_score.nil? %>
  <div class="c100 p100 medium">
@@ -55,30 +53,128 @@
             <div class="bar"></div>
             <div class="fill"></div>
           </div>
-  </div>
-  <% elsif rounded_average_score  >= 7 %>
+    </div>
+  <% else rounded_average_score  >= 7 %>
       <div class="c100 p100 medium green">
           <span><%= rounded_average_score %></span>
           <div class="slice">
             <div class="bar"></div>
             <div class="fill"></div>
           </div>
-  </div>
-  <% else %>
+      </div>
   <% end %>
-
 </div>
+</div>
+
+
+
+
+
+<% when @forum.category == "Movies" %>
+
+<div class="forum-page-show-top">
+<div class="forum-show-img">
+<%= cl_image_tag @forum.photo.key, height: 350, width: 200 %>
+</div>
+
+
 <div class="forum-show-description">
+<p class="forum-show-title"><%= @forum.title %></p>
+<p class="forum-show-year"><%= @forum.year %></p>
+<p class="forum-show-category"><%= @forum.category %></p>
+<p class="forum-show-creator">Directed by <%= @forum.creator %></p>
+</div>
+
+<div class="rating-circle">
+<% if rounded_average_score.nil? %>
+ <div class="c100 p100 medium">
+          <span><%= 0 %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+  </div>
+<% elsif rounded_average_score <= 4 %>
+  <div class="c100 p100 medium red">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+  </div>
+  <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
+    <div class="c100 p100 medium orange">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+    </div>
+  <% else rounded_average_score  >= 7 %>
+      <div class="c100 p100 medium green">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+      </div>
+  <% end %>
+</div>
+</div>
+
+<% else %>
+
+<div class="forum-page-show-top">
+<div class="forum-show-img">
+<%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
+</div>
+
+
+<div class="forum-show-description">
+<p class="forum-show-title"><%= @forum.title %></p>
 <p class="forum-show-year"><%= @forum.year %></p>
 <p class="forum-show-category"><%= @forum.category %></p>
 <p class="forum-show-creator"><%= @forum.creator %></p>
 </div>
-</div>
+
+<div class="rating-circle">
+<% if rounded_average_score.nil? %>
+ <div class="c100 p100 medium">
+          <span><%= 0 %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+  </div>
+<% elsif rounded_average_score <= 4 %>
+  <div class="c100 p100 medium red">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+  </div>
+  <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
+    <div class="c100 p100 medium orange">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+    </div>
+  <% else rounded_average_score  >= 7 %>
+      <div class="c100 p100 medium green">
+          <span><%= rounded_average_score %></span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+      </div>
+  <% end %>
 </div>
 </div>
 
-
-
+<% end %>
 
 
 
