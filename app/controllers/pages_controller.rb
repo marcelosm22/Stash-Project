@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @forums = Forum.all
+    @ratings = Rating.where(forum_id: params[:id])
   end
 end
