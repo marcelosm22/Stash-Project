@@ -1,16 +1,18 @@
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
 
 
-
+<div class="input-container">
 <%= form_with url: forums_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "input",
     placeholder: "Search for title or category!"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= button_tag(type: "submit", class: "btn btn-default") do %>
+  <i class="fa-solid fa-magnifying-glass"></i>
 <% end %>
-
+<% end %>
+</div>
 
 <div class="index-grid">
 
