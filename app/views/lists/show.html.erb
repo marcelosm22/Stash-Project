@@ -1,6 +1,7 @@
     <h2 class= "list_title"><%= @list.title %></h2>
    <ul class= "lists_list"><% @list.forums.each do |forum| %>
       <% bookmark = Bookmark.find_by(list: @list  ) %>
+       <%= raise %>
         <li class= "list_item_list"><p><%= link_to forum.title, forum_path(params[:id]) %>
           <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %></li>
     <% end %></ul>
