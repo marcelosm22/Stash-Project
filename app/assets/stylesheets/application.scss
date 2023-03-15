@@ -6,6 +6,10 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Rammetto+One&display=swap');
+
+//font-family: 'Carter One', cursive;
+//font-family: 'Rammetto One', cursive;
 
 // Your CSS partials
 @import "components/index";
@@ -15,4 +19,8 @@
 @import "pages/home";
 @import "pages/forum_show";
 @import "components/lists";
+<<<<<<< HEAD
 @import "components/profile";
+=======
+@import "components/sidebar"
+>>>>>>> master
