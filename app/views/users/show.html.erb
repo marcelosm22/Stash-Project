@@ -1,13 +1,25 @@
 <h1>User Dashboard</h1>
 
-<p><%= @user.username %></p>
+<p><strong><%= @user.username %></strong></p>
 
+<div class="user-container-flex-div">
+  <div class="user-card">
+      <%= link_to user_path(@user)do %>
+      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, crop: :fill, :radius => "max", :gravity => "face" %>
+      <% end %>
+      <div class="user-card-details-text">
+         <p>@<%= @user.username %></p>
+      </div>
+  </div>
+</div>
 
+<h2>My lists</h2>
 <% @lists.each do |list|%>
 <p><%= link_to list.title, list_path(list)%></p>
 <% end %>
 
+<h2>Create a list</h2>
 <%= simple_form_for @list do |f| %>
-<%= f.input :title, placeholder: 'My List' %>
+<%= f.input :title, placeholder: 'List Title' %>
 <%= f.submit "Create a list" %>
 <% end %>

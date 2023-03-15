@@ -3,5 +3,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @lists = List.where(user_id: params[:id])
     @list = List.new
+    @lists = List.all
   end
 end
