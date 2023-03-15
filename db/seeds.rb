@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -81,3 +82,33 @@ file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726816/m
 forum_10 = Forum.new(title: "How to Train Your Dragon: The Hidden World", creator: "Dean DeBlois", year: "2019", category: "Movies" )
 forum_10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 forum_10.save
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831909/Folder_2_zsehef.jpg")
+forum_11 = Forum.new(title: "Frank", creator: "Amy Winehouse", year: "2003", category: "Music" )
+forum_11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_11.save
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831910/Folder_shup6t.jpg")
+forum_12 = Forum.new(title: "Back to Black", creator: "Amy Winehouse", year: "2006", category: "Music" )
+forum_12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_12.save
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831887/Folder_mrranb.jpg")
+forum_13 = Forum.new(title: "Either/Or", creator: "Elliott Smith", year: "1997", category: "Music" )
+forum_13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_13.save
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678820353/production/1vz27xlqfyvgbn6smschovyxfnml.jpg")
+forum_14 = Forum.new(title: "The Office", creator: "Greg Daniels", year: "2005", category: "TV Shows" )
+forum_14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_14.save
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678820421/production/z2lkuqgl9q4dz8ttq5hbfsbmfxlo.jpg")
+forum_15 = Forum.new(title: "Friends", creator: "David Crane and Marta Kauffman", year: "1994", category: "TV Shows" )
+forum_15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_15.save
