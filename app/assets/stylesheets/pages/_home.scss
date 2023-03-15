@@ -1,9 +1,48 @@
 // Specific CSS for your home-page
-.home-grid {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
+.music-amy-home-top-div {
+display: flex;
+padding-bottom: 30px;
+margin-top: 80px;
+border-bottom: solid thin gray;
 }
 
-.home-top-img {
-margin-right: 0;
+.music-elliot-home-top-div {
+display: flex;
+margin-top: 80px;
+padding-bottom: 30px;
+border-bottom: solid thin gray;
+  }
+
+
+.music-home-text-div {
+margin-left: 30px;
+margin-right: 30px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+ p {
+font-size: 15px;
+}
+}
+
+.home-rating-cirlce {
+margin-top: 35px;
+}
+
+
+.movies-home-flex {
+display: flex;
+justify-content: space-between;
+margin-top: 40px;
+margin-left: 300px;
+margin-right: 300px;
+}
+
+
+.home-music-grid {
+display: grid;
+grid-template-columns: 1fr 1fr ;
+margin-left: 300px;
+margin-right: 300px;
+column-gap: 10px;
 }
