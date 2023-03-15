@@ -13,168 +13,170 @@
 <% end %>
 
 
-<% case %>
-<% when @forum.category == "Music" %>
+<div class="top-background-color">
+  <% case %>
+  <% when @forum.category == "Music" %>
 
-<div class="forum-page-show-top">
-<div class="forum-show-img">
-<%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
-</div>
-
-
-<div class="forum-show-description">
-<p class="forum-show-title"><%= @forum.title %></p>
-<p class="forum-show-year"><%= @forum.year %></p>
-<p class="forum-show-category"><%= @forum.category %></p>
-<p class="forum-show-creator"><%= @forum.creator %></p>
-</div>
-
-<div class="rating-circle">
-<% if rounded_average_score.nil? %>
- <div class="c100 p100 medium">
-          <span><%= 0 %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
+  <div class="forum-page-show-top">
+  <div class="forum-show-img">
+  <%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
   </div>
-<% elsif rounded_average_score <= 4 %>
-  <div class="c100 p100 medium red">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
+
+
+  <div class="forum-show-description">
+  <p class="forum-show-title"><%= @forum.title %></p>
+  <p class="forum-show-year"><%= @forum.year %></p>
+  <p class="forum-show-category"><%= @forum.category %></p>
+  <p class="forum-show-creator"><%= @forum.creator %></p>
   </div>
-  <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
-    <div class="c100 p100 medium orange">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
+
+  <div class="rating-circle">
+  <% if rounded_average_score.nil? %>
+  <div class="c100 p100 medium">
+            <span><%= 0 %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
     </div>
-  <% else rounded_average_score  >= 7 %>
-      <div class="c100 p100 medium green">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
+  <% elsif rounded_average_score <= 4 %>
+    <div class="c100 p100 medium red">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+    </div>
+    <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
+      <div class="c100 p100 medium orange">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
       </div>
+    <% else rounded_average_score  >= 7 %>
+        <div class="c100 p100 medium green">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+        </div>
+    <% end %>
+  </div>
+  </div>
+
+
+
+
+
+  <% when @forum.category == "Movies" %>
+
+  <div class="forum-page-show-top">
+  <div class="forum-show-img">
+  <%= cl_image_tag @forum.photo.key, height: 350, width: 200 %>
+  </div>
+
+
+  <div class="forum-show-description">
+  <p class="forum-show-title"><%= @forum.title %></p>
+  <p class="forum-show-year"><%= @forum.year %></p>
+  <p class="forum-show-category"><%= @forum.category %></p>
+  <p class="forum-show-creator">Directed by <%= @forum.creator %></p>
+  </div>
+
+  <div class="rating-circle">
+  <% if rounded_average_score.nil? %>
+  <div class="c100 p100 medium">
+            <span><%= 0 %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+    </div>
+  <% elsif rounded_average_score <= 4 %>
+    <div class="c100 p100 medium red">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+    </div>
+    <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
+      <div class="c100 p100 medium orange">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+      </div>
+    <% else rounded_average_score  >= 7 %>
+        <div class="c100 p100 medium green">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+        </div>
+    <% end %>
+  </div>
+  </div>
+
+  <% else %>
+
+  <div class="forum-page-show-top">
+  <div class="forum-show-img">
+  <%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
+  </div>
+
+
+  <div class="forum-show-description">
+  <p class="forum-show-title"><%= @forum.title %></p>
+  <p class="forum-show-year"><%= @forum.year %></p>
+  <p class="forum-show-category"><%= @forum.category %></p>
+  <p class="forum-show-creator"><%= @forum.creator %></p>
+  </div>
+
+  <div class="rating-circle">
+  <% if rounded_average_score.nil? %>
+  <div class="c100 p100 medium">
+            <span><%= 0 %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+    </div>
+  <% elsif rounded_average_score <= 4 %>
+    <div class="c100 p100 medium red">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+    </div>
+    <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
+      <div class="c100 p100 medium orange">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+      </div>
+    <% else rounded_average_score  >= 7 %>
+        <div class="c100 p100 medium green">
+            <span><%= rounded_average_score %></span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+        </div>
+    <% end %>
+  </div>
+  </div>
+
   <% end %>
 </div>
-</div>
-
-
-
-
-
-<% when @forum.category == "Movies" %>
-
-<div class="forum-page-show-top">
-<div class="forum-show-img">
-<%= cl_image_tag @forum.photo.key, height: 350, width: 200 %>
-</div>
-
-
-<div class="forum-show-description">
-<p class="forum-show-title"><%= @forum.title %></p>
-<p class="forum-show-year"><%= @forum.year %></p>
-<p class="forum-show-category"><%= @forum.category %></p>
-<p class="forum-show-creator">Directed by <%= @forum.creator %></p>
-</div>
-
-<div class="rating-circle">
-<% if rounded_average_score.nil? %>
- <div class="c100 p100 medium">
-          <span><%= 0 %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-  </div>
-<% elsif rounded_average_score <= 4 %>
-  <div class="c100 p100 medium red">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-  </div>
-  <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
-    <div class="c100 p100 medium orange">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-    </div>
-  <% else rounded_average_score  >= 7 %>
-      <div class="c100 p100 medium green">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-      </div>
-  <% end %>
-</div>
-</div>
-
-<% else %>
-
-<div class="forum-page-show-top">
-<div class="forum-show-img">
-<%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
-</div>
-
-
-<div class="forum-show-description">
-<p class="forum-show-title"><%= @forum.title %></p>
-<p class="forum-show-year"><%= @forum.year %></p>
-<p class="forum-show-category"><%= @forum.category %></p>
-<p class="forum-show-creator"><%= @forum.creator %></p>
-</div>
-
-<div class="rating-circle">
-<% if rounded_average_score.nil? %>
- <div class="c100 p100 medium">
-          <span><%= 0 %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-  </div>
-<% elsif rounded_average_score <= 4 %>
-  <div class="c100 p100 medium red">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-  </div>
-  <% elsif rounded_average_score > 4 && rounded_average_score < 7 %>
-    <div class="c100 p100 medium orange">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-    </div>
-  <% else rounded_average_score  >= 7 %>
-      <div class="c100 p100 medium green">
-          <span><%= rounded_average_score %></span>
-          <div class="slice">
-            <div class="bar"></div>
-            <div class="fill"></div>
-          </div>
-      </div>
-  <% end %>
-</div>
-</div>
-
-<% end %>
 
 
 
@@ -190,51 +192,48 @@
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 
 <div class="post-comments-section">
-  <%= simple_form_for [@forum, @rating] do |f| %>
-    <%= f.input :score, collection: 1..10 %>
-    <%= f.submit "Rate", class: "btn btn-primary" %>
-  <% end %>
+
 
   <div class="post-comment-form">
-    <%= simple_form_for [@forum, @post] do |f| %>
+    <%= simple_form_for [@forum, @post], :html=> { class: 'post-simple-form' } do |f| %>
       <%= f.input :content %>
       <%= f.submit "Create a Post", class: "btn btn-primary" %>
     <% end %>
   </div>
   <hr size="10">
 
+
   <% @posts.reverse.each do |post| %>
-    <%= link_to forum_post_path(@forum, post) do %>
-    <div class="post-content-box">
-      <div class="post-user">
-        <p>@<%= User.find(post.user_id).username %></p>
-      </div>
-      <div class="post-content-text">
-        <p><%= post.content %></p>
-      </div>
+    <div class="post-with-comments">
+      <%= link_to forum_post_path(@forum, post) do %>
+      <div class="post-content-box">
+        <div class="post-user">
+          <p>@<%= User.find(post.user_id).username %></p>
+        </div>
+        <div class="post-content-text">
+          <p><%= post.content %></p>
+        </div>
 
+      </div>
+      <% end %>
+
+      <% post.id %>
+      <% top_comments = Comment.where(post: post.id).last(5) %>
+      <% top_comments.each do |comment| %>
+        <div class="display-comment">
+          <div class="display-comment-user">
+            <p>@<%= User.find(comment.user_id).username %></p>
+          </div>
+          <div class="display-comment-content">
+            <p><%= comment.comment_content %></p>
+          </div>
+        </div>
+      <% end %>
+
+      <%= simple_form_for [@forum, post, @comment] do |f| %>
+      <%= f.input :comment_content %>
+      <%= f.submit "Comment", class: "btn btn-primary" %>
+      <% end %>
     </div>
-    <% end %>
-
-    <% post.id %>
-    <% top_comments = Comment.where(post: post.id).last(5) %>
-    <% top_comments.each do |comment| %>
-      <div class="display-comment">
-        <div class="display-comment-user">
-          <p>@<%= User.find(comment.user_id).username %></p>
-        </div>
-        <div class="display-comment-content">
-          <p><%= comment.comment_content %></p>
-        </div>
-      </div>
-    <% end %>
-
-    <%= simple_form_for [@forum, post, @comment] do |f| %>
-    <%= f.input :comment_content %>
-    <%= f.submit "Comment", class: "btn btn-primary" %>
-    <% end %>
-    <hr size="10">
-
-
   <% end %>
 </div>
