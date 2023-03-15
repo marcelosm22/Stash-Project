@@ -192,6 +192,12 @@
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 
 <div class="post-comments-section">
+  <div class="forum-rating">
+    <%= simple_form_for [@forum, @rating] do |f| %>
+      <%= f.input :score, collection: 1..10 %>
+      <%= f.submit "Rate", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 
   <div class="post-comment-form">
