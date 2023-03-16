@@ -1,15 +1,24 @@
-    <h2 class= "list_title"><%= @list.title %></h2>
+ <div>
+  <h2 class= "list_title"><%= @list.title %></h2>
+ </div>
+ <div>
    <ul class= "lists_list"><% @list.forums.each do |forum| %>
       <% bookmark = Bookmark.find_by(list: @list, forum: forum ) %>
         <li class= "list_item_list"><p><%= link_to forum.title, forum_path(forum) %>
           <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{forum.title} from your #{@list.title} list"} %></li>
-    <% end %></ul>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-<%= f.association :forum %>
-<%= f.submit "Add a new an item"%>
-<% end %>
+      <% end %>
+    </ul>
+</div>
+<div>
+<div data-controller="tom_select"
+  data-map-items-value="<%= @itens.to_json %>">
+</div>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :forum, collection: Forum.all, input_html: { data: { controller: "tom-select", tom_select_itens_value: @itens.to_json } }%>
+  <%= f.submit "Add a new Forum"%>
+  <% end %>
+</div>
 
+<p><%= button_to "Delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
 
-<p><%= button_to "BACK", lists_path, {class:"button"} %></p>
-
-<%= button_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?"} %>
+<p><%= button_to "BACK", lists_path %></p>
