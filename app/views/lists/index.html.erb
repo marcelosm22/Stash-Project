@@ -1,6 +1,14 @@
-<ul class= "lists_list"><% @lists.each do |list| %>
-  <li class= "list_item_list"><%= link_to list.title, list_path(list) %>
-  <%= list.forums.size %>
-  <% end %></li>
-</ul>
-<p><%= link_to "Create a new List", new_list_path %></p>
+<div class= "forum_list_title">
+  <h2>Forum Lists</h2>
+</div>
+<div class= "lists_list">
+  <ul><% @lists.each do |list| %>
+    <div><li class= "list_item_list"><p class= "list_item_list_text"><%= link_to list.title, list_path(list) %></p>
+      <%= list.forums.size %>
+    </div>
+    <% end %></li>
+  </ul>
+  <div class= "create_list_btn">
+      <p><%= link_to "Create a new List", new_list_path %></p>
+  </div>
+</div>
