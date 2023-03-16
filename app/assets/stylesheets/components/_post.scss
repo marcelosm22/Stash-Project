@@ -1,9 +1,10 @@
 .post-comments-section {
   // width: 50%;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 500px;
+  margin-right: 300px;
   // width: 100%;
   // margin: auto;
+  padding-bottom: 500px;
 }
 
 .post-content-box {
@@ -12,15 +13,20 @@
   margin-top: 50px;
   margin-bottom: 10px;
   // background: #ffffff;
-  border: 1px solid #c6c6c6;
-  box-shadow: 0px 4px 4px rgba(120, 120, 120, 0.25);
+  // border: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  // box-shadow: 0px 4px 4px rgba(120, 120, 120, 0.25);
   border-radius: 2px;
+  // padding-left: 60px;
+  display: flex;
 }
 
 .post-comment-form {
-  border: 1px solid #c6c6c6;
+  // border: 1px solid #c6c6c6;
   // border-radius: 5px;
-  padding: 25px 25px 25px 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  // padding: 25px 25px 25px 25px;
 }
 
 .post-comment-form:hover {
@@ -29,18 +35,19 @@
 
 
 .display-comment {
-  border: 1px solid #c6c6c6;
+  // border: 1px solid #c6c6c6;
   margin-top: 10px;
   border-radius: 2px;
   min-height: 50px;
-  padding: 25px 25px 25px 25px;
+  // padding: 25px 25px 25px 25px;
   overflow-wrap: break-word;
+  display: flex;
 }
 
 .post-content-text {
   // width: 100%;
-  min-height: 100px;
-  margin: 10px 20px;
+  // min-height: 80px;
+  margin-top: 36px;
   overflow-wrap: break-word;
   p {
     // width: 400px;
@@ -49,7 +56,7 @@
 }
 
 .post-user {
-  padding-left: 20px;
+  // padding-left: 20px;
 
   p{
     color: black;
@@ -82,20 +89,22 @@
     // border: none;
     border: 1px solid #c6c6c6;
     border-radius: 5px;
-    height: 150px;
+    // height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
     background: transparent;
     background-color: none;
     font-size: 16px;
     resize: none;
+    -webkit-appearance:none;
   }
 }
 
 .post-with-comments{
   text-decoration: none;
   padding: 25px 25px 25px 25px;
-  border: 1px solid #c6c6c6;
+  // border: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
   background-color: none;
 
   a:link {
@@ -104,6 +113,7 @@
 
   .post-content-box {
     margin-top: 0px;
+
   }
 
   textarea {
@@ -122,6 +132,14 @@
     font-size: 16px;
     resize: none;
   }
+
+  textarea:active {
+    appearance: none;
+  }
+
+  .display-comment{
+    padding-left: 20px;
+  }
 }
 
 
@@ -134,4 +152,27 @@
 
 #comment_comment_content:hover:read-write {
   background-color: #e8e8e8;
+}
+
+.post-content-box-left{
+  // border-left: 10px solid transparent;
+  padding-left: 10px;
+  padding-right: 10px;
+  // background-color: rgb(244, 244, 244);
+}
+
+
+.comment-content-box-left{
+  border-left: 10px solid transparent;
+}
+
+.content-box-main {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+#post {
+  input {
+    float: right;
+  }
 }
