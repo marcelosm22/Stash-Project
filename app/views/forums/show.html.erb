@@ -20,6 +20,10 @@
   <div class="forum-page-show-top">
   <div class="forum-show-img">
   <%= cl_image_tag @forum.photo.key, height: 300, width: 300 %>
+
+
+
+
   </div>
 
 
@@ -75,7 +79,7 @@
 
   <div class="forum-page-show-top">
   <div class="forum-show-img">
-  <%= cl_image_tag @forum.photo.key, height: 350, width: 200 %>
+  <%= cl_image_tag @forum.photo.key, height: 295, width: 200 %>
   </div>
 
 
@@ -178,6 +182,12 @@
   <% end %>
 </div>
 
+<div class="forum-rating">
+  <%= simple_form_for [@forum, @rating] do |f| %>
+    <%= f.input :score, collection: 1..10 %>
+    <%= f.submit "Rate", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
 
 
@@ -192,18 +202,12 @@
   data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
 
 <div class="post-comments-section">
-  <div class="forum-rating">
-    <%= simple_form_for [@forum, @rating] do |f| %>
-      <%= f.input :score, collection: 1..10 %>
-      <%= f.submit "Rate", class: "btn btn-primary" %>
-    <% end %>
-  </div>
 
 
   <div class="post-comment-form">
     <%= simple_form_for [@forum, @post], :html=> { class: 'post-simple-form' } do |f| %>
-      <%= f.input :content %>
-      <%= f.submit "Create a Post", class: "btn btn-primary" %>
+      <%= f.input :content, placeholder: "Write your post here" %>
+      <%= f.submit "Post", class: "button-56" %>
     <% end %>
   </div>
   <hr size="10">
@@ -212,33 +216,61 @@
   <% @posts.reverse.each do |post| %>
     <div class="post-with-comments">
       <%= link_to forum_post_path(@forum, post) do %>
+
       <div class="post-content-box">
-        <div class="post-user">
-          <p>@<%= User.find(post.user_id).username %></p>
-        </div>
-        <div class="post-content-text">
-          <p><%= post.content %></p>
+        <div class="post-content-box-left">
+          <div class="profile picture">
+          <%#= raise %>
+          <div class="profile-picture">
+            <%= link_to user_path(User.find(post.user_id))do %>
+              <%= cl_image_tag (User.find(post.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
+            <% end %>
+          </div>
+          </div>
         </div>
 
+        <div class="content-box-main">
+          <div class="post-user">
+            <p>@<%= User.find(post.user_id).username %></p>
+          </div>
+          <div class="post-content-text">
+            <p><%= post.content %></p>
+          </div>
+        </div>
+
+
+
       </div>
+
       <% end %>
 
       <% post.id %>
       <% top_comments = Comment.where(post: post.id).last(5) %>
       <% top_comments.each do |comment| %>
         <div class="display-comment">
-          <div class="display-comment-user">
-            <p>@<%= User.find(comment.user_id).username %></p>
+          <%# hier  %>
+          <div class="comment-content-box-left">
+            <div class="profile-picture">
+            <%= link_to user_path(User.find(comment.user_id))do %>
+              <%= cl_image_tag (User.find(comment.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
+            <% end %>
+            </div>
           </div>
-          <div class="display-comment-content">
-            <p><%= comment.comment_content %></p>
+
+          <div class="content-box-main">
+            <div class="display-comment-user">
+              <p>@<%= User.find(comment.user_id).username %></p>
+            </div>
+            <div class="display-comment-content">
+              <p><%= comment.comment_content %></p>
+            </div>
           </div>
         </div>
       <% end %>
 
       <%= simple_form_for [@forum, post, @comment] do |f| %>
-      <%= f.input :comment_content %>
-      <%= f.submit "Comment", class: "btn btn-primary" %>
+      <%= f.input :comment_content, placeholder: "Write your comment here" %>
+      <%= f.submit "Comment", class: "button-56" %>
       <% end %>
     </div>
   <% end %>
