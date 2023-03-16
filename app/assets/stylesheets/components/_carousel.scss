@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.carousel {
+  text-align: center;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3,100%);
