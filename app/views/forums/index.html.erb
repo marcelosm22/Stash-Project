@@ -49,7 +49,7 @@
 </div>
 
 <% if @forums.any? {| forum | forum.category == "Music"} %>
-<h2 class="search-index-title">Music</h2>
+<h2 class="search-index-title">Music Albums</h2>
 <% end %>
 <div class="search-index-flex">
 <% music_array = @forums.select {| forum | forum.category == "Music"} %>
