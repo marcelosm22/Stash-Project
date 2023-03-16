@@ -34,3 +34,10 @@ margin-right: 5px;
 transform: scale(1.2);
 opacity: 0.88;
 }
+
+.search-index-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+row-gap: 10px;
+margin-left: 20px;
+}

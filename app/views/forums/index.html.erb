@@ -16,6 +16,9 @@
 
 
 
+
+
+
 <div class="div-index-search-results">
 
 
@@ -23,6 +26,19 @@
 <% if @forums.any? {| forum | forum.category == "Movies"} %>
 <h2 class="search-index-title">Movies</h2>
 <% end %>
+<% if params[:query].present? %>
+<div class="search-index-grid">
+<% movies_array = @forums.select {| forum | forum.category == "Movies"} %>
+<% movies_array.each do |forum| %>
+<div class="img-index-div">
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 200 %>
+<% end %>
+</div>
+<% end %>
+</div>
+
+<% else %>
 <div class="search-index-flex">
 <% movies_array = @forums.select {| forum | forum.category == "Movies"} %>
 <% movies_array.sample(5).each do |forum| %>
@@ -33,13 +49,17 @@
 </div>
 <% end %>
 </div>
+<% end %>
+
+
 
 <% if @forums.any? {| forum | forum.category == "TV Shows"} %>
 <h2 class="search-index-title">TV Shows</h2>
 <% end %>
-<div class="search-index-flex">
+<% if params[:query].present? %>
+<div class="search-index-grid">
 <% tv_shows_array = @forums.select {| forum | forum.category == "TV Shows"} %>
-<% tv_shows_array.sample(5).each do |forum| %>
+<% tv_shows_array.each do |forum| %>
 <div class="img-index-div">
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 280, width: 200 %>
@@ -48,12 +68,42 @@
 <% end %>
 </div>
 
+<% else %>
+<div class="search-index-flex">
+<% movies_array = @forums.select {| forum | forum.category == "TV Shows"} %>
+<% movies_array.sample(5).each do |forum| %>
+<div class="img-index-div">
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 200 %>
+<% end %>
+</div>
+<% end %>
+</div>
+<% end %>
+
+
+
+
 <% if @forums.any? {| forum | forum.category == "Music"} %>
 <h2 class="search-index-title">Music Albums</h2>
 <% end %>
-<div class="search-index-flex">
+<% if params[:query].present? %>
+<div class="search-index-grid">
 <% music_array = @forums.select {| forum | forum.category == "Music"} %>
-<% music_array.sample(5).each do |forum| %>
+<% music_array.each do |forum| %>
+<div class="img-index-div">
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 200, width: 200 %>
+<% end %>
+</div>
+<% end %>
+</div>>
+
+
+<% else %>
+<div class="search-index-flex">
+<% movies_array = @forums.select {| forum | forum.category == "Music"} %>
+<% movies_array.sample(5).each do |forum| %>
 <div class="img-index-div">
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 200, width: 200 %>
@@ -61,5 +111,7 @@
 </div>
 <% end %>
 </div>
+<% end %>
+
 
 </div>
