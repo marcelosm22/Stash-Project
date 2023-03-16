@@ -7,7 +7,9 @@ class BookmarksController < ApplicationController
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new
+    @forum = Forum.find(params[:bookmark][:forum])
+    @bookmark.forum = @forum
     @bookmark.list = @list
     if @bookmark.save
       redirect_to list_path(@list)
@@ -24,7 +26,7 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:list_id, :forum_id)
+    params.require(:bookmark).permit(:list_id, :forum)
   end
 
   def set_bookmark

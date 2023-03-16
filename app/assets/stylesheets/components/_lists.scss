@@ -5,17 +5,23 @@
   margin: 100px auto 0;
   padding: 10px;
   box-sizing: border-box;
-  background: white;
+  background: rgba(255, 255, 255, 0);
   box-shadow: inset 0 0 15px whitesmoke;
+}
+
+.list_item_list_text
+{
+  text-decoration: none;
 }
 
 .list_item_list
 {
 text-decoration: none;
 display: flex;
+justify-content: space-between;
 background: white;
 padding: 10px 20px;
-color: darkgrey;
+color: rgb(0, 0, 0);
 margin: 5px 0;
 transition: .5s;
 }
@@ -24,4 +30,27 @@ transition: .5s;
 {
   transform: scale(1.07);
   background: lightgrey;
+}
+
+.forum_list_title
+{
+text-align: center;
+}
+
+.create_list_btn
+{
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  background: lightgrey;
+  padding: 10px 20px;
+  color: rgb(0, 0, 0);
+  margin: 5px 0;
+  transition: .5s;
+}
+
+.create_list_btn:hover
+{
+  transform: scale(1.07);
+  background: rgb(255, 255, 255);
 }
