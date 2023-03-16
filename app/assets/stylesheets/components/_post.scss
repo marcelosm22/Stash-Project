@@ -1,13 +1,17 @@
 .post-comments-section {
-  width: 50%;
-  margin: auto;
+  // width: 50%;
+  margin-left: 200px;
+  margin-right: 200px;
+  // width: 100%;
+  // margin: auto;
 }
 
 .post-content-box {
   text-decoration: none;
+  width: 100%;
   margin-top: 50px;
   margin-bottom: 10px;
-  background: #ffffff;
+  // background: #ffffff;
   border: 1px solid #c6c6c6;
   box-shadow: 0px 4px 4px rgba(120, 120, 120, 0.25);
   border-radius: 2px;
@@ -15,25 +19,40 @@
 
 .post-comment-form {
   border: 1px solid #c6c6c6;
-  border-radius: 5px;
+  // border-radius: 5px;
+  padding: 25px 25px 25px 25px;
 }
+
+.post-comment-form:hover {
+  background-color: #e8e8e8;
+}
+
 
 .display-comment {
   border: 1px solid #c6c6c6;
   margin-top: 10px;
   border-radius: 2px;
   min-height: 50px;
+  padding: 25px 25px 25px 25px;
+  overflow-wrap: break-word;
 }
 
 .post-content-text {
+  // width: 100%;
   min-height: 100px;
   margin: 10px 20px;
+  overflow-wrap: break-word;
+  p {
+    // width: 400px;
+    color: black;
+  }
 }
 
 .post-user {
-  background: #c2c3e6;
+  padding-left: 20px;
 
   p{
+    color: black;
     margin-bottom: 0;
   }
 }
@@ -48,4 +67,71 @@
   p {
     margin-bottom: 0;
   }
+}
+
+.post-simple-form {
+  background-color: none;
+
+
+
+  textarea {
+    overflow: visible;
+    outline: none;
+    box-shadow: none;
+    // width: 100%;
+    // border: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    background-color: none;
+    font-size: 16px;
+    resize: none;
+  }
+}
+
+.post-with-comments{
+  text-decoration: none;
+  padding: 25px 25px 25px 25px;
+  border: 1px solid #c6c6c6;
+  background-color: none;
+
+  a:link {
+    text-decoration: none;
+  }
+
+  .post-content-box {
+    margin-top: 0px;
+  }
+
+  textarea {
+    overflow: visible;
+    outline: none;
+    box-shadow: none;
+    // width: 100%;
+    // border: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    // height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    background-color: none;
+    font-size: 16px;
+    resize: none;
+  }
+}
+
+
+.post-with-comments:hover{
+  background-color: #e8e8e8;
+}
+#post_content:hover:read-write {
+  background-color: #e8e8e8;
+}
+
+#comment_comment_content:hover:read-write {
+  background-color: #e8e8e8;
 }

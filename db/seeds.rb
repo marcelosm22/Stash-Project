@@ -1,114 +1,119 @@
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-
-User.create(
-  username: "antonio",
-  password: "123456",
-  email: "antonio@gmail.com"
-)
-User.create(
-  username: "marcelo",
-  password: "123456",
-  email: "marcelo@gmail.com"
-)
-User.create(
-  username: "wagner",
-  password: "123456",
-  email: "wagner@gmail.com"
-)
-User.create(
-  username: "ruda",
-  password: "123456",
-  email: "ruda@gmail.com"
-)
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929952/122774271_mcwuxr.jpg")
+user_1 = User.new(username: "marcelosm22", password: "123456", email: "marcelo@gmail.com" )
+user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_1.save!
 
 
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726454/movie%20posters/everything-everywhere-all-at-once-movie-poster_gufrmk.jpg")
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929984/120477867_yph5zq.png")
+user_2 = User.new(username: "wieland2", password: "123456", email: "wagner@gmail.com" )
+user_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_2.save!
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929932/122754806_mmzn0v.jpg")
+user_3 = User.new(username: "toni8400", password: "123456", email: "antonio@gmail.com" )
+user_3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_3.save!
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929970/122709872_sjtwao.jpg")
+user_4 = User.new(username: "rudamafra", password: "123456", email: "ruda@gmail.com" )
+user_4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+user_4.save!
+
+
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930248/everything-everywhere-all-at-once-movie-poster-md_eb61um.jpg")
 forum_1 = Forum.new(title: "Everything Everywhere All At Once", creator: "Daniel KwanDaniel Scheinert", year: "2022", category: "Movies" )
 forum_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_1.save
+forum_1.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726506/movie%20posters/harry-potter-and-the-order-of-the-phoenix-movie-poster_defzfx.jpg")
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930278/harry-potter-and-the-order-of-the-phoenix-movie-poster-md_fs5e9x.jpg")
 forum_2 = Forum.new(title: "Harry Potter and the Order of the Phoenix", creator: "David Yates", year: "2007", category: "Movies" )
 forum_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_2.save
+forum_2.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726574/movie%20posters/x-men-days-of-future-past-movie-poster_o0q3oh.jpg")
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930333/x-men-days-of-future-past-movie-poster-md_udohdf.jpg")
 forum_3 = Forum.new(title: "X-Men: Days of Future Past", creator: "Bryan Singer", year: "2014", category: "Movies" )
 forum_3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_3.save
+forum_3.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726626/movie%20posters/the-gray-man-movie-poster_ta9adn.jpg")
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930400/the-gray-man-movie-poster-md_ojodrq.jpg")
 forum_4 = Forum.new(title: "The Gray Man", creator: "Anthony RussoJoe Russo", year: "2022", category: "Movies" )
 forum_4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_4.save
+forum_4.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726661/movie%20posters/top-gun-maverick-movie-poster_sa52us.jpg")
-forum_5 = Forum.new(title: "Top Gun: Maverick", creator: "Joseph Kosinski", year: "2022", category: "Movies" )
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930469/thor-love-and-thunder-movie-poster-md_qh48fn.jpg")
+forum_5 = Forum.new(title: "Thor: Love and Thunder", creator: "Taika Waititi", year: "2022", category: "Movies" )
 forum_5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_5.save
+forum_5.save!
 
-
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726697/movie%20posters/thor-love-and-thunder-movie-poster-md_jpwxf3.jpg")
-forum_6 = Forum.new(title: "Thor: Love and Thunder", creator: "Taika Waititi", year: "2022", category: "Movies" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930549/once-upon-a-time-in-hollywood-movie-poster-md_zpvlos.jpg")
+forum_6 = Forum.new(title: "Once Upon a Time... in Hollywood", creator: "Quentin Tarantino", year: "2019", category: "Movies" )
 forum_6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_6.save
+forum_6.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726713/movie%20posters/spider-man-far-from-home-international-movie-poster-md_sd4cgc.jpg")
-forum_7 = Forum.new(title: "Spider-Man: Far from Home", creator: "Jon Watts", year: "2019", category: "Movies" )
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930634/Folder_2_iodtbv.jpg")
+forum_7 = Forum.new(title: "Frank", creator: "Amy Winehouse", year: "2003", category: "Music" )
 forum_7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_7.save
+forum_7.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726748/movie%20posters/once-upon-a-time-in-hollywood-movie-poster-md_v3ofel.jpg")
-forum_8 = Forum.new(title: "Once Upon a Time... in Hollywood", creator: "Quentin Tarantino", year: "2019", category: "Movies" )
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930637/Folder_hkpqa1.jpg")
+forum_8 = Forum.new(title: "Back to Black", creator: "Amy Winehouse", year: "2006", category: "Music" )
 forum_8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_8.save
+forum_8.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726782/movie%20posters/dark-phoenix-movie-poster-md_d4hwnc.jpg")
-forum_9 = Forum.new(title: "X-Men: Dark Phoenix", creator: "Simon Kinberg", year: "2019", category: "Movies" )
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930641/Folder_se0wiu.jpg")
+forum_9 = Forum.new(title: "Either/Or", creator: "Elliott Smith", year: "1997", category: "Music" )
 forum_9.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_9.save
+forum_9.save!
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726816/movie%20posters/how-to-train-your-dragon-the-hidden-world-teaser-movie-poster-md_kpkdte.jpg")
-forum_10 = Forum.new(title: "How to Train Your Dragon: The Hidden World", creator: "Dean DeBlois", year: "2019", category: "Movies" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930683/Folder_k2lcfr.png")
+forum_10 = Forum.new(title: "Endless Summer Vacation", creator: "Miley Cyrus", year: "2023", category: "Music" )
 forum_10.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_10.save
+forum_10.save!
 
-
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831909/Folder_2_zsehef.jpg")
-forum_11 = Forum.new(title: "Frank", creator: "Amy Winehouse", year: "2003", category: "Music" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930670/Folder_diib3m.png")
+forum_11 = Forum.new(title: "Evermore", creator: "Taylor Swift", year: "2021", category: "Music" )
 forum_11.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_11.save
+forum_11.save!
 
-
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831910/Folder_shup6t.jpg")
-forum_12 = Forum.new(title: "Back to Black", creator: "Amy Winehouse", year: "2006", category: "Music" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930658/Folder_2_t0yvry.png")
+forum_12 = Forum.new(title: "SOS", creator: "SZA", year: "2022", category: "Music" )
 forum_12.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_12.save
+forum_12.save!
 
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678831887/Folder_mrranb.jpg")
-forum_13 = Forum.new(title: "Either/Or", creator: "Elliott Smith", year: "1997", category: "Music" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930663/Folder_oufjua.png")
+forum_13 = Forum.new(title: "Ctrl", creator: "SZA", year: "2013", category: "Music" )
 forum_13.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_13.save
+forum_13.save!
 
 
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678820353/production/1vz27xlqfyvgbn6smschovyxfnml.jpg")
-forum_14 = Forum.new(title: "The Office", creator: "Greg Daniels", year: "2005", category: "TV Shows" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678931061/friends-movie-poster-md_pdazsl.jpg")
+forum_14 = Forum.new(title: "Friends", creator: "David Crane and Marta Kauffman", year: "1994", category: "TV Shows" )
 forum_14.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_14.save
+forum_14.save!
 
-
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678820421/production/z2lkuqgl9q4dz8ttq5hbfsbmfxlo.jpg")
-forum_15 = Forum.new(title: "Friends", creator: "David Crane and Marta Kauffman", year: "1994", category: "TV Shows" )
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930828/the-good-place-movie-poster-md_jfnfa0.jpg")
+forum_15 = Forum.new(title: "The Good Place", creator: "David Schwartz", year: "2016", category: "TV Shows" )
 forum_15.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-forum_15.save
+forum_15.save!
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930975/the-last-of-us-movie-poster-md_gy2l2p.jpg")
+forum_16 = Forum.new(title: "The Last of Us", creator: "Neil Druckmann", year: "2023", category: "TV Shows" )
+forum_16.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_16.save!
+
+
+file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930858/modern-family-movie-poster-md_tkcb3f.jpg")
+forum_17 = Forum.new(title: "Modern Family", creator: "Steven Levitan and Christopher Lloyd", year: "2009", category: "TV Shows" )
+forum_17.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+forum_17.save!

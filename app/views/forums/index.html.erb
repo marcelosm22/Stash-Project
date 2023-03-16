@@ -1,24 +1,45 @@
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
 
 
-
+<div class="input-container">
 <%= form_with url: forums_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "form-control",
+    class: "input",
     placeholder: "Search for title or category!"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= button_tag(type: "submit", class: "btn btn-default") do %>
+  <i class="fa-solid fa-magnifying-glass"></i>
 <% end %>
+<% end %>
+</div>
 
-
-<div class="index-grid">
-
-
-<% @forums.each do |forum| %>
+<h2 class="search-index-title">Movies</h2>
+<div class="search-index-flex">
+<% movies_array = @forums.select {| forum | forum.category == "Movies"} %>
+<% movies_array.each do |forum| %>
 <%= link_to forum_path(forum) do %>
-<%= cl_image_tag forum.photo.key, height: 300, width: 200 %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
 <% end %>
 <% end %>
+</div>
 
+<h2 class="search-index-title">TV Shows</h2>
+<div class="search-index-flex">
+<% tv_shows_array = @forums.select {| forum | forum.category == "TV Shows"} %>
+<% tv_shows_array.each do |forum| %>
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
+<% end %>
+<% end %>
+</div>
+
+<h2 class="search-index-title">Music</h2>
+<div class="search-index-flex">
+<% music_array = @forums.select {| forum | forum.category == "Music"} %>
+<% music_array.each do |forum| %>
+<%= link_to forum_path(forum) do %>
+<%= cl_image_tag forum.photo.key, height: 200, width: 200 %>
+<% end %>
+<% end %>
 </div>

@@ -8,14 +8,8 @@
 <%= f.association :forum %>
 <%= f.submit "Add a new an item"%>
 <% end %>
-    <%= link_to "BACK", lists_path %>
 
-<p><%= link_to "delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
 
-<%= form_with url: forums_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for title or category!"%>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<p><%= button_to "BACK", lists_path %></p>
+
+<p><%= button_to "Delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
