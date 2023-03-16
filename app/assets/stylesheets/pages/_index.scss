@@ -2,4 +2,34 @@
 
 .search-index-flex {
 display: flex;
+margin-left: 20px;
+margin-bottom: 20px;
+}
+
+
+.div-index-search-results {
+margin-left: 300px;
+margin-right: 300px;
+margin-top: 50px;
+padding-bottom: 30px;
+padding-top: 30px;
+background-color: rgb(226, 226, 226);
+}
+
+
+.search-index-title {
+margin-left: 20px;
+margin-bottom: 28px;
+font-size: 25px;
+color: rgb(247, 247, 247);
+}
+
+
+.img-index-div {
+margin-right: 5px;
+}
+
+.img-index-div:hover {
+transform: scale(1.2);
+opacity: 0.88;
 }
