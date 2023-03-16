@@ -5,9 +5,6 @@ user_1 = User.new(username: "marcelosm22", password: "123456", email: "marcelo@g
 user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user_1.save!
 
-<<<<<<< HEAD
-file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726454/movie%20posters/everything-everywhere-all-at-once-movie-poster_gufrmk.jpg")
-=======
 
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929984/120477867_yph5zq.png")
@@ -29,7 +26,6 @@ user_4.save!
 
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678930248/everything-everywhere-all-at-once-movie-poster-md_eb61um.jpg")
->>>>>>> 5ac3ee65dc536f9048f19bdff0efebcf26df5cf7
 forum_1 = Forum.new(title: "Everything Everywhere All At Once", creator: "Daniel KwanDaniel Scheinert", year: "2022", category: "Movies" )
 forum_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 forum_1.save!
