@@ -6,7 +6,9 @@
   Rails.application.routes.draw do
     devise_for :users
     root to: "pages#home"
-    resources :users, only: [:show]
+    resources :users, only: [:show] do
+      resources :followings, only: [:index, :new, :create, :destroy]
+    end
     resources :forums do
         resources :ratings
         resources :posts, only: [:new, :create, :show] do
