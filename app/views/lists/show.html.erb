@@ -10,6 +10,6 @@
 <% end %>
 
 
-<p><%= button_to "BACK", lists_path %></p>
+<p><%= button_to "BACK", lists_path, {class:"button"} %></p>
 
-<p><%= button_to "Delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
+<%= button_to "Delete this list", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?"} %>
