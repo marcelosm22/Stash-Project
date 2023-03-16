@@ -77,7 +77,6 @@ group :test do
   gem "webdrivers"
 end
 
-  gem "faker"
 
   # gem "dotenv-rails", groups: [:development, :test]
 

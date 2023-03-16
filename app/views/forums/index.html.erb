@@ -17,7 +17,7 @@
 <h2 class="search-index-title">Movies</h2>
 <div class="search-index-flex">
 <% movies_array = @forums.select {| forum | forum.category == "Movies"} %>
-<% movies_array.sample(8).each do |forum| %>
+<% movies_array.each do |forum| %>
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
 <% end %>
@@ -27,7 +27,7 @@
 <h2 class="search-index-title">TV Shows</h2>
 <div class="search-index-flex">
 <% tv_shows_array = @forums.select {| forum | forum.category == "TV Shows"} %>
-<% tv_shows_array.sample(6).each do |forum| %>
+<% tv_shows_array.each do |forum| %>
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
 <% end %>
@@ -37,7 +37,7 @@
 <h2 class="search-index-title">Music</h2>
 <div class="search-index-flex">
 <% music_array = @forums.select {| forum | forum.category == "Music"} %>
-<% music_array.sample(6).each do |forum| %>
+<% music_array.each do |forum| %>
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 200, width: 200 %>
 <% end %>
