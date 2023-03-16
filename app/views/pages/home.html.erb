@@ -119,7 +119,6 @@
 <div class="wrapper">
 
   <section id="section1">
-    <a href="#section3" class="arrow__btn left-arrow">‹</a>
 
     <div class="item">
       <a href="forums/1">
@@ -215,30 +214,5 @@
         <%= cl_image_tag @image14.photo.key, height: 280, width: 200 %>
     </div>
 
-    <a href="#section3" class="arrow__btn right-arrow">›</a>
-  </section>
-
-  <section id="section3">
-    <a href="#section2" class="arrow__btn left-arrow">‹</a>
-    <div class="item">
-      <a href="forums/15">
-        <% @image15 = Forum.find(15) %>
-        <%= cl_image_tag @image15.photo.key, height: 280, width: 200 %>
+    </section>
     </div>
-
-    <div class="item">
-      <a href="forums/16">
-        <% @image16 = Forum.find(16) %>
-        <%= cl_image_tag @image16.photo.key, height: 280, width: 200 %>
-    </div>
-
-    <div class="item">
-      <a href="forums/17">
-        <% @image17 = Forum.find(17) %>
-        <%= cl_image_tag @image17.photo.key, height: 280, width: 200 %>
-    </div>
-
-
-    <a href="#section1" class="arrow__btn right-arrow">›</a>
-  </section>
-</div>
