@@ -14,32 +14,52 @@
 <% end %>
 </div>
 
+
+
+<div class="div-index-search-results">
+
+
+
+<% if @forums.any? {| forum | forum.category == "Movies"} %>
 <h2 class="search-index-title">Movies</h2>
+<% end %>
 <div class="search-index-flex">
 <% movies_array = @forums.select {| forum | forum.category == "Movies"} %>
-<% movies_array.each do |forum| %>
+<% movies_array.sample(5).each do |forum| %>
+<div class="img-index-div">
 <%= link_to forum_path(forum) do %>
-<%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 200 %>
 <% end %>
+</div>
 <% end %>
 </div>
 
+<% if @forums.any? {| forum | forum.category == "TV Shows"} %>
 <h2 class="search-index-title">TV Shows</h2>
+<% end %>
 <div class="search-index-flex">
 <% tv_shows_array = @forums.select {| forum | forum.category == "TV Shows"} %>
-<% tv_shows_array.each do |forum| %>
+<% tv_shows_array.sample(5).each do |forum| %>
+<div class="img-index-div">
 <%= link_to forum_path(forum) do %>
-<%= cl_image_tag forum.photo.key, height: 280, width: 180 %>
+<%= cl_image_tag forum.photo.key, height: 280, width: 200 %>
 <% end %>
+</div>
 <% end %>
 </div>
 
+<% if @forums.any? {| forum | forum.category == "Music"} %>
 <h2 class="search-index-title">Music</h2>
+<% end %>
 <div class="search-index-flex">
 <% music_array = @forums.select {| forum | forum.category == "Music"} %>
-<% music_array.each do |forum| %>
+<% music_array.sample(5).each do |forum| %>
+<div class="img-index-div">
 <%= link_to forum_path(forum) do %>
 <%= cl_image_tag forum.photo.key, height: 200, width: 200 %>
 <% end %>
+</div>
 <% end %>
+</div>
+
 </div>
