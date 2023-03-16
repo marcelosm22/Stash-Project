@@ -30,8 +30,6 @@ User.create(
   email: "ruda@gmail.com"
 )
 
-
-
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678726454/movie%20posters/everything-everywhere-all-at-once-movie-poster_gufrmk.jpg")
 forum_1 = Forum.new(title: "Everything Everywhere All At Once", creator: "Daniel KwanDaniel Scheinert", year: "2022", category: "Movies" )
 forum_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
