@@ -13,6 +13,11 @@
   </div>
 </div>
 
+<%= simple_form_for [@user, @following] do |f| %>
+  <%= f.submit "Follow" %>
+<% end %>
+
+
 <h2>My lists</h2>
 <% @lists.each do |list|%>
 <p><%= button_to list.title, list_path(list), {class:"button"}%></p>
