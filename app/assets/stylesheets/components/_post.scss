@@ -169,10 +169,58 @@
 .content-box-main {
   margin-top: 10px;
   margin-left: 20px;
+  width: 500px;
+  overflow-wrap: break-word;
 }
 
 #post {
   input {
     float: right;
   }
+}
+
+.post-with-comments-inside-post {
+  text-decoration: none;
+  padding: 25px 25px 25px 25px;
+  // border: 1px solid #c6c6c6;
+  border-bottom: 1px solid #c6c6c6;
+  background-color: none;
+
+  a:link {
+    text-decoration: none;
+  }
+
+  .post-content-box {
+    margin-top: 0px;
+
+  }
+
+  textarea {
+    overflow: visible;
+    outline: none;
+    box-shadow: none;
+    // width: 100%;
+    // border: none;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    // height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    background-color: none;
+    font-size: 16px;
+    resize: none;
+  }
+
+  textarea:active {
+    appearance: none;
+  }
+
+  .display-comment{
+    padding-left: 20px;
+  }
+}
+
+.all-comments {
+  margin-bottom: 30px;
 }
