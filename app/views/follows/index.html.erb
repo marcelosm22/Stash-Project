@@ -1,0 +1,12 @@
+
+<p>Followers</p>
+<% @user.followers.each do |follower| %>
+<%= follower.username %>
+<%= cl_image_tag follower.photo.key.to_s, width: 50, height: 50, :radius => "max", :gravity => "face" %>
+<% end %>
+
+<p>Following</p>
+<% @user.following.each do |following| %>
+<%= following.username %>
+<%= cl_image_tag following.photo.key.to_s, width: 50, height: 50, :radius => "max", :gravity => "face" %>
+<% end %>
