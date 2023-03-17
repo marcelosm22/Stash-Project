@@ -1,20 +1,19 @@
-<h1>User Dashboard</h1>
-
-<p><strong><%= @user.username %></strong></p>
-
 <div class="user-container-flex-div">
+<h1 class="user-dashboard">User Dashboard</h1>
+
   <div class="user-card">
       <%= link_to user_path(@user)do %>
-      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, crop: :fill, :radius => "max", :gravity => "face" %>
+      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, crop: :fill, :gravity => "face" %>
       <% end %>
-      <div class="user-card-details-text">
-         <p>@<%= @user.username %></p>
-      </div>
   </div>
-</div>
+      <div class="user-card-details-text">
+         <p><strong>@<%= @user.username %></strong></p>
+      </div>
 
 
 
+
+<div class="follow-button">
 <% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
 <% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
  <%= link_to 'Unfollow', user_follow_path(@user, @follow.id),
@@ -24,22 +23,29 @@
   <%= f.submit "Follow" %>
 <% end %>
 <% end %>
+</div>
+
+
+<div class="followers">
+<p>Followers: <%= @followers.count %> </p>
+<p>Following: <%= @following.count %> </p>
+</div>
 
 
 
-<p>Followers <%= @followers.count %> </p>
-<p>Following <%= @following.count %> </p>
-
-
-
-
-<h2>My lists</h2>
+<h2 class="user-dashboard">My lists</h2>
+<div class="lists-show">
 <% @lists.each do |list|%>
 <p><%= button_to list.title, list_path(list), {class:"button"}%></p>
 <% end %>
+</div>
 
-<h2>Create a list</h2>
+<h2 class="user-dashboard">Create a list</h2>
+<div class="create-list">
 <%= simple_form_for @list do |f| %>
 <%= f.input :title, placeholder: 'List Title' %>
 <%= f.submit "Create a list" %>
 <% end %>
+</div>
+</div>
+</div>
