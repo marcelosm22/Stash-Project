@@ -1,7 +1,13 @@
+.link_new_list
+{
+text-decoration: none;
+color: black;
+}
+
 .lists_list
 {
   position: relative;
-  width: 450px;
+  width: 415px;
   margin: 100px auto 0;
   padding: 10px;
   box-sizing: border-box;
@@ -12,10 +18,13 @@
 .list_item_list_text
 {
   text-decoration: none;
+  justify-content: space-between;
+
 }
 
 .list_item_list
 {
+width: 415px;
 text-decoration: none;
 display: flex;
 justify-content: space-between;
@@ -28,6 +37,7 @@ transition: .5s;
 
 .list_item_list:hover
 {
+  justify-content: center;
   transform: scale(1.07);
   background: lightgrey;
 }
@@ -39,6 +49,7 @@ text-align: center;
 
 .create_list_btn
 {
+  width: 415px;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
@@ -53,4 +64,45 @@ text-align: center;
 {
   transform: scale(1.07);
   background: rgb(255, 255, 255);
+}
+
+.new_list_form
+{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: black;
+
+}
+
+form {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label, select {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
+
+button:active {
+  background-color: #005cbf;
 }
