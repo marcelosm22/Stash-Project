@@ -18,40 +18,16 @@
         </div>
       </div>
     </div>
-    <% @post.id %>
 
-    <div class="all-comments">
-      <% top_comments = Comment.where(post: @post.id) %>
-      <% top_comments.each do |comment| %>
-        <div class="display-comment">
-          <%# hier  %>
-          <div class="comment-content-box-left">
-            <div class="profile-picture">
-            <%= link_to user_path(User.find(comment.user_id))do %>
-              <%= cl_image_tag (User.find(comment.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
-            <% end %>
-            </div>
-          </div>
 
-          <div class="content-box-main">
-            <div class="display-comment-user">
-              <p>@<%= User.find(comment.user_id).username %></p>
-            </div>
-            <div class="display-comment-content">
-              <p><%= comment.comment_content %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+    <div data-controller="insert-in-list" data-insert-in-list-position-value="beforeend">
+
+      <div class="all-comments" data-insert-in-list-target="items">
+        <% @post.comments.each do |item| %>
+          <%= render :partial => "comments/comment_list", locals: { comment: item }  %>
+        <% end %>
       </div>
-      <%= simple_form_for [@forum, @post, @comment] do |f| %>
-      <%= f.input :comment_content, placeholder: "Write your comment here" %>
-      <%= f.submit "Comment", class: "button-56" %>
-      <% end %>
-
-
+      <%= render :partial => "comments/comment_form", :locals => { :forum => @forum, :post => @post, :comment => @comment } %>
+    </div>
   </div>
-
-
-
 </div> <!--post-comments-section-->

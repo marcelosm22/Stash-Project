@@ -1,22 +1,36 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:new, :create, :show]
 
-  def show
-    @comment = Comment.find(params[:id])
-  end
+  # def show
+  #   @comment = Comment.find(params[:id])
+  # end
 
-  def new
-    @comment = Comment.new
-  end
+  # def new
+  #   @comment = Comment.new
+  # end
 
   def create
+    # @forum = Forum.find(params[:forum_id])
+    # @post = Post.find(params[:id])
+    # @post.forum = @forum
+    # @post.user = current_user
+
+    @forum = Forum.find(@post.forum_id)
+
+
     @comment = Comment.new(comment_params)
     @comment.post = @post
     @comment.user = current_user
-    if @comment.save
-      redirect_to post_path(@post)
-    else
-      render :new, status: :unprocessable_entity
+    # raise
+
+    respond_to do |format|
+      if @comment.save
+        format.html {redirect_to post_path(@post)}
+        format.json
+      else
+        format.html {render "posts/show", status: :unprocessable_entity}
+        format.json
+      end
     end
   end
 
@@ -31,7 +45,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:user_id, :post_id, :comment_content)
+    params.require(:comment).permit(:comment_content)
   end
-
 end
