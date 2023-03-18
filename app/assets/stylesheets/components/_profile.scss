@@ -1,7 +1,61 @@
+.user-container-flex-div {
+  display: block;
+  margin-left: 700px;
+  margin-right: 700px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #080F15;
+}
 .user-card {
-  margin-right: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 .user-card-details-text {
-  margin-top: 10px;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.unfollow-button {
+text-decoration: none;
+color: black;
+background-color: white;
+padding-left: 5px;
+padding-right: 5px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.followers {
+  display: flex;
+  justify-content: space-evenly
+}
+
+.user-dashboard {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.follow-button {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.lists-show {
+  padding-left: 10px;
+}
+
+.create-list {
+  padding-left: 10px;
+  padding-right: 10px;
 }

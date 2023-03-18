@@ -214,64 +214,68 @@
 
 
   <% @posts.reverse.each do |post| %>
+
     <div class="post-with-comments">
-      <%= link_to forum_post_path(@forum, post) do %>
+
 
       <div class="post-content-box">
         <div class="post-content-box-left">
-          <div class="profile picture">
-          <%#= raise %>
           <div class="profile-picture">
-            <%= link_to user_path(User.find(post.user_id))do %>
+            <%#= link_to user_path(User.find(post.user_id))do %>
               <%= cl_image_tag (User.find(post.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
-            <% end %>
-          </div>
-          </div>
-        </div>
-
-        <div class="content-box-main">
-          <div class="post-user">
-            <p>@<%= User.find(post.user_id).username %></p>
-          </div>
-          <div class="post-content-text">
-            <p><%= post.content %></p>
+            <%# end %>
           </div>
         </div>
-
-
+        <%= link_to forum_post_path(@forum, post) do %>
+          <div class="content-box-main">
+            <div class="post-user">
+              <p>@<%= User.find(post.user_id).username %></p>
+            </div>
+            <div class="post-content-text">
+              <p><%= post.content %></p>
+            </div>
+          </div>
+        <% end %>
 
       </div>
 
-      <% end %>
 
-      <% post.id %>
-      <% top_comments = Comment.where(post: post.id).last(5) %>
-      <% top_comments.each do |comment| %>
-        <div class="display-comment">
-          <%# hier  %>
-          <div class="comment-content-box-left">
-            <div class="profile-picture">
-            <%= link_to user_path(User.find(comment.user_id))do %>
-              <%= cl_image_tag (User.find(comment.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
-            <% end %>
+      <div class="all-comments">
+        <% post.id %>
+        <% top_comments = Comment.where(post: post.id).last(5) %>
+        <% top_comments.each do |comment| %>
+          <div class="display-comment">
+            <%# hier  %>
+            <div class="comment-content-box-left">
+              <div class="profile-picture">
+              <%= link_to user_path(User.find(comment.user_id))do %>
+                <%= cl_image_tag (User.find(comment.user_id).photo.key).to_s, :radius => "max", :gravity => "face" %>
+              <% end %>
+              </div>
+            </div>
+
+            <div class="content-box-main">
+              <div class="display-comment-user">
+                <p>@<%= User.find(comment.user_id).username %></p>
+              </div>
+              <div class="display-comment-content">
+                <p><%= comment.comment_content %></p>
+              </div>
             </div>
           </div>
-
-          <div class="content-box-main">
-            <div class="display-comment-user">
-              <p>@<%= User.find(comment.user_id).username %></p>
-            </div>
-            <div class="display-comment-content">
-              <p><%= comment.comment_content %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
 
       <%= simple_form_for [@forum, post, @comment] do |f| %>
       <%= f.input :comment_content, placeholder: "Write your comment here" %>
       <%= f.submit "Comment", class: "button-56" %>
       <% end %>
     </div>
+
+
   <% end %>
+
+
+
+
 </div>

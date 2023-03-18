@@ -1,6 +1,16 @@
+body {
+  background-color: #080F15;
+}
+
+p {
+  color: white;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(33, 33, 33);
+  background-color: #080F15;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,11 +21,11 @@
   width: 40px;
 }
 
-.navbar-title {
-font-size: 50px;
-margin-left: 680px;
-font-family: 'Rammetto One', cursive;
-color: white;
+.navbar-logo {
+  width: 300px;
+  display: block;
+  margin: auto;
+  overflow: hidden;
 }
 
 .nav-item {

@@ -7,7 +7,7 @@
     devise_for :users
     root to: "pages#home"
     resources :users, only: [:show] do
-      resources :followings, only: [:index, :new, :create, :destroy]
+      resources :follows, only: [:new, :create, :index, :destroy]
     end
     resources :forums do
         resources :ratings
