@@ -16,16 +16,16 @@
   height: 40px;
   padding: 10px;
   transition: .2s linear;
-  border: 2.5px solid black;
+  border: 2.5px solid #AE64F2;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
+  background-color: #080F15;}
 
 .input:focus {
   outline: none;
-  border: 0.5px solid black;
-  box-shadow: -5px -5px 0px black;
+  border: 0.5px solid #AE64F2;
+  box-shadow: -5px -5px 0px #AE64F2;
 }
 
 .input-container:hover > .icon {
