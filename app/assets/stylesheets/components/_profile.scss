@@ -1,7 +1,7 @@
 .user-container-flex-div {
-  display: block;
-  margin-left: 700px;
-  margin-right: 700px;
+  display: flex;
+  margin-left: 300px;
+  margin-right: 300px;
   margin-top: 50px;
   margin-bottom: 50px;
   padding-bottom: 30px;
@@ -13,31 +13,24 @@
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid #080F15;
 }
+
+.user-card-container {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+margin-left: 20px;
+}
 .user-card {
   display: flex;
   justify-content: center;
 }
 
-.user-card-details-text {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
+.followers, .following, .number-of-lists {
+display: flex;
+justify-content: space-between;
 }
 
-.unfollow-button {
-text-decoration: none;
-color: black;
-background-color: white;
-padding-left: 5px;
-padding-right: 5px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
 
-.followers {
-  display: flex;
-  justify-content: space-evenly
-}
 
 .user-dashboard {
   display: flex;
@@ -46,9 +39,9 @@ padding-bottom: 5px;
 }
 
 .follow-button {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center;
+margin-top: 20px;
+display: flex;
+justify-content: center;
 }
 
 .lists-show {
@@ -56,6 +49,48 @@ padding-bottom: 5px;
 }
 
 .create-list {
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-bottom: 25px;
+}
+
+.user-button-lists {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+width: 700px;
+row-gap: 20px;
+column-gap: 20px;
+}
+
+
+.edit-profile-button {
+display: flex;
+justify-content: center;
+margin-top: 7px;
+}
+
+.flex-user-buttons-and-create-list {
+display: flex;
+flex-direction: column;
+margin-left: 100px;
+margin-top: 50px;
+}
+
+.user-create-list {
+  --color: #AE64F2;
+  padding: 0.5em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  text-decoration: 0;
+  width: 500px;
+
 }

@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   def show
     @bookmark = Bookmark.new
     @forums = Forum.all
-    @itens = @forums.map do |forum|
+    @items = @forums.map do |forum|
       {
         id: forum.id,
         make: forum.category.downcase,
@@ -25,7 +25,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save!
-      redirect_to lists_path
+      redirect_to user_path(current_user.id)
     else
       render :new, status: :unprocessable_entity
     end

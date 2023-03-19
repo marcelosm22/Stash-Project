@@ -1,51 +1,65 @@
 <div class="user-container-flex-div">
-<h1 class="user-dashboard">User Dashboard</h1>
 
-  <div class="user-card">
+  <div class="user-card-container">
+    <div class="user-card">
       <%= link_to user_path(@user)do %>
-      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, crop: :fill, :gravity => "face" %>
+      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
       <% end %>
-  </div>
+    </div>
+
       <div class="user-card-details-text">
          <p><strong>@<%= @user.username %></strong></p>
       </div>
 
+      <div class="follows-container">
+        <div class="followers">
+          <p>Followers</p>
+          <%= @followers.count %>
+        </div>
+        <div class="followers">
+          <p>Following</p>
+          <%= @following.count %>
+        </div>
+      </div>
+          <div class="number-of-lists-container">
+            <div class="number-of-lists">
+              <p>Lists</p>
+              <%= @lists.count %>
+            </div>
+          </div>
 
-
-
-<div class="follow-button">
-<% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
-<% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
- <%= link_to 'Unfollow', user_follow_path(@user, @follow.id),
-  data: {turbo_method: :delete}, class:"unfollow-button"  %>
-<% else %>
-<%= simple_form_for [@user, @follow] do |f| %>
-  <%= f.submit "Follow" %>
-<% end %>
-<% end %>
+<div class="edit-profile-button">
+<%= link_to "Edit Profile", edit_user_registration_path, {class:"button-profile-edit"} %>
 </div>
 
 
-<div class="followers">
-<p>Followers: <%= @followers.count %> </p>
-<p>Following: <%= @following.count %> </p>
+  <div class="follow-button">
+    <% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
+      <% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
+      <%= link_to 'Unfollow', user_follow_path(@user, @follow.id),
+    data: {turbo_method: :delete}, class:"unfollow-button"  %>
+   <% else %>
+      <%= form_with model: [@user, @follow] do |f| %>
+      <%= f.submit "Follow", {class:"button-profile-edit"} %>
+      <% end %>
+     <% end %>
+  </div>
+
 </div>
 
+<div class="flex-user-buttons-and-create-list">
 
-
-<h2 class="user-dashboard">My lists</h2>
-<div class="lists-show">
-<% @lists.each do |list|%>
-<p><%= button_to list.title, list_path(list), {class:"button"}%></p>
-<% end %>
-</div>
-
-<h2 class="user-dashboard">Create a list</h2>
 <div class="create-list">
-<%= simple_form_for @list do |f| %>
-<%= f.input :title, placeholder: 'List Title' %>
-<%= f.submit "Create a list" %>
+<%= form_with model: @list do |f| %>
+<%= f.text_field :title, {class:"user-create-list"} %>
+<%= f.submit "+", {class:"button-profile-edit"} %>
 <% end %>
 </div>
+
+<div class="user-button-lists">
+<% @lists.each do |list| %>
+<%= link_to list.title, list_path(list), {class:"button-list"} %>
+<% end %>
 </div>
+
 </div>
