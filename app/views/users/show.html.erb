@@ -1,6 +1,6 @@
 <div class="user-container-flex-div">
 
-  <div class="user-card-container">
+<div class="user-card-container">
     <div class="user-card">
       <%= link_to user_path(@user)do %>
       <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
@@ -12,19 +12,23 @@
       </div>
 
       <div class="follows-container">
+      <%= link_to user_follows_path(@user.id) do %>
         <div class="followers">
           <p>Followers</p>
           <%= @followers.count %>
         </div>
+        <% end  %>
+        <%= link_to user_follows_path(@user.id) do %>
         <div class="followers">
           <p>Following</p>
           <%= @following.count %>
         </div>
+        <% end %>
       </div>
           <div class="number-of-lists-container">
             <div class="number-of-lists">
               <p>Lists</p>
-              <%= @lists.count %>
+              <p class="lists-count"><%= @lists.count %></p>
             </div>
           </div>
 

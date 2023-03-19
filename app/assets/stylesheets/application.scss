@@ -7,9 +7,11 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 //font-family: 'Carter One', cursive;
 //font-family: 'Rammetto One', cursive;
+//font-family: 'Bebas Neue', cursive;
 
 // Your CSS partials
 @import "components/index";
@@ -22,3 +24,5 @@
 @import "components/profile";
 @import "components/button";
 @import "tom-select/dist/css/tom-select.css";
+@import "pages/follow_index";
+@import "components/banner"

@@ -1,3 +1,19 @@
+<div class="banner" style= "background-color: #080F15">
+  <div class="container">
+    <h1>Discover new music and film and track the ones you love!</h1>
+    <p>Start a conversation and be a part of the community!</p>
+      <%= link_to forums_path do %>
+      <button class="button">Explore</button>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
 <div class="div home-music-grid">
 <div class="music-amy-home-top-div">
 
@@ -85,7 +101,7 @@
 
 <div class="music-elliot-home-top-div">
 
-<% @elliot = Forum.find(1) %>
+<% @elliot = Forum.find(12) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@elliot) do %>
@@ -113,7 +129,8 @@
 </div>
 
 
- <h1 class="carousel">↑ Titles Trending Now</h1>
+
+ <h1 class="carousel">↑ Movies Trending This Week</h1>
 <div class="wrapper">
 
   <section id="section1">

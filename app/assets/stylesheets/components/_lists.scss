@@ -92,6 +92,7 @@ text-align: center;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 margin-left: 20px;
+margin-top: 50px;
 }
 
 .delete-hover-button {
@@ -113,7 +114,8 @@ background-color: #252726;
   margin-left: 300px;
   margin-right: 300px;
   margin-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 300px;
+  padding-top: 50px;
   margin-bottom: 50px;
   background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
   border-radius: 16px;
@@ -121,4 +123,31 @@ background-color: #252726;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid #080F15;
+}
+
+.list-user-information {
+display: flex;
+align-items: center;
+margin-left: 30px;
+}
+
+p {
+color: white;
+}
+
+.list-title-title {
+
+font-size: 30px;
+font-family: 'Bebas Neue', cursive;
+}
+
+.list-title {
+margin-top: 30px;
+margin-left: 20px;
+display: flex;
+}
+
+.list-search-show {
+width: 300px;
+margin-left: 300px;
 }

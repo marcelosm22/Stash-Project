@@ -1,0 +1,71 @@
+.follow-index-user-div {
+  display: flex;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 200px;
+  padding-top: 30px;
+  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #080F15;
+}
+
+
+.followers-container {
+display: flex;
+flex-direction: column;
+margin-right: 100px;
+margin-left: 150px;
+padding-right: 100px;
+border-right: solid thin white;
+}
+
+.following-container {
+display: flex;
+flex-direction: column;
+}
+
+.follow-user-profile-index-div {
+display: flex;
+text-decoration: none;
+align-items: center;
+margin-top: 20px;
+width: 300px;
+}
+
+.follow-user-profile-index-div:hover {
+  transform: scale(1.07);
+  background: #c099e5;
+}
+
+.following-link {
+text-decoration: none;
+}
+
+.follower-profile-img {
+margin-right: 10px;
+}
+
+.followers:hover {
+border-bottom: solid thin #c099e5;
+margin-bottom: 3px;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+color: white;
+}
+
+.number-of-lists:hover {
+  border-bottom: solid thin #c099e5;
+  margin-bottom: 3px;
+}
