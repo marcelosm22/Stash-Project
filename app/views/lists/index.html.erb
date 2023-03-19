@@ -2,13 +2,15 @@
   <h2>Forum Lists</h2>
 </div>
 <div class= "lists_list">
-  <ul><% @lists.each do |list| %>
-    <div><li class= "list_item_list"><p class= "list_item_list_text"><%= link_to list.title, list_path(list) %></p>
-      <%= list.forums.size %>
+  <% @lists.each do |list| %>
+    <div class="row", style="align-items: center;">
+      <div class="col-11">
+          <p class= "list_item_list"><%= link_to list.title, list_path(list), class: "link_new_list" %></p>
+      </div>
+      <div class="col-1">
+        <%= list.forums.size %>
+      </div>
     </div>
-    <% end %></li>
-  </ul>
-  <div class= "create_list_btn">
-      <p><%= link_to "Create a new List", new_list_path %></p>
-  </div>
+  <% end %>
+    <p><%= link_to "Create a new List", new_list_path, class: "list_item_list"  %></p>
 </div>
