@@ -206,7 +206,7 @@
 
   <div class="post-comment-form">
     <%= simple_form_for [@forum, @post], :html=> { class: 'post-simple-form' } do |f| %>
-      <%= f.input :content, placeholder: "Write your post here" %>
+      <%= f.input :content, label: false, placeholder: "Write your post here" %>
       <%= f.submit "Post", class: "button-56" %>
     <% end %>
   </div>
@@ -245,7 +245,6 @@
         <% top_comments = Comment.where(post: post.id).last(5) %>
         <% top_comments.each do |comment| %>
           <div class="display-comment">
-            <%# hier  %>
             <div class="comment-content-box-left">
               <div class="profile-picture">
               <%= link_to user_path(User.find(comment.user_id))do %>
@@ -266,16 +265,10 @@
         <% end %>
       </div>
 
-      <%= simple_form_for [@forum, post, @comment] do |f| %>
-      <%= f.input :comment_content, placeholder: "Write your comment here" %>
-      <%= f.submit "Comment", class: "button-56" %>
-      <% end %>
+      <%#= simple_form_for [@forum, post, @comment] do |f| %>
+      <%#= f.input :comment_content, placeholder: "Write your comment here" %>
+      <%#= f.submit "Comment", class: "button-56" %>
+      <%# end %>
     </div>
-
-
   <% end %>
-
-
-
-
 </div>

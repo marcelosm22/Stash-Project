@@ -1,0 +1,20 @@
+<div class="display-comment">
+  <div class="comment-content-box-left">
+    <div class="profile-picture">
+      <%= link_to user_path(User.find(comment[:user_id]))do %>
+        <%= cl_image_tag (User.find(comment[:user_id]).photo.key).to_s, :radius => "max", :gravity => "face" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="content-box-main">
+    <div class="display-comment-user">
+      <p>@<%= User.find(comment.user_id).username %></p>
+    </div>
+    <div class="display-comment-content">
+      <div data-insert-in-list-target="items">
+        <p><%= comment.comment_content %></p>
+      </div>
+    </div>
+  </div>
+</div>
