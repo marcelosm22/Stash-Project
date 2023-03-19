@@ -1,3 +1,19 @@
+<div class="banner" style= "background-color: #080F15">
+  <div class="container">
+    <h1>Discover new music and film and track the ones you love!</h1>
+    <p>Start a conversation and be a part of the community!</p>
+      <%= link_to forums_path do %>
+      <button class="button">Explore</button>
+      <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
 <div class="div home-music-grid">
 <div class="music-amy-home-top-div">
 
@@ -85,7 +101,7 @@
 
 <div class="music-elliot-home-top-div">
 
-<% @elliot = Forum.find(13) %>
+<% @elliot = Forum.find(12) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@elliot) do %>
@@ -113,7 +129,8 @@
 </div>
 
 
- <h1 class="carousel">↑ Titles Trending Now</h1>
+
+ <h1 class="carousel">↑ Movies Trending This Week</h1>
 <div class="wrapper">
 
   <section id="section1">
@@ -127,41 +144,41 @@
 
     <div class="item">
       <a href="forums/2">
-        <% @image2 = Forum.find(2) %>
+        <% @image2 = Forum.find(1) %>
         <%= cl_image_tag @image2.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/3">
-        <% @image3 = Forum.find(3) %>
+        <% @image3 = Forum.find(1) %>
         <%= cl_image_tag @image3.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/4">
-        <% @image4 = Forum.find(4) %>
+        <% @image4 = Forum.find(1) %>
         <%= cl_image_tag @image4.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/5">
-        <% @image5 = Forum.find(5) %>
+        <% @image5 = Forum.find(1) %>
         <%= cl_image_tag @image5.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/6">
-        <% @image6 = Forum.find(6) %>
+        <% @image6 = Forum.find(1) %>
         <%= cl_image_tag @image6.photo.key, height: 280, width: 200 %>
     </div>
 
       <div class="item">
       <a href="forums/7">
-        <% @image7 = Forum.find(7) %>
+        <% @image7 = Forum.find(1) %>
         <%= cl_image_tag @image7.photo.key, height: 280, width: 200 %>
     </div>
 
@@ -172,43 +189,43 @@
     <a href="#section1" class="arrow__btn left-arrow">‹</a>
     <div class="item">
       <a href="forums/8">
-        <% @image8 = Forum.find(8) %>
+        <% @image8 = Forum.find(1) %>
         <%= cl_image_tag @image8.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/9">
-        <% @image9 = Forum.find(9) %>
+        <% @image9 = Forum.find(1) %>
         <%= cl_image_tag @image9.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/10">
-        <% @image10 = Forum.find(10) %>
+        <% @image10 = Forum.find(1) %>
         <%= cl_image_tag @image10.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/11">
-        <% @image11 = Forum.find(11) %>
+        <% @image11 = Forum.find(1) %>
         <%= cl_image_tag @image11.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/12">
-        <% @image12 = Forum.find(12) %>
+        <% @image12 = Forum.find(1) %>
         <%= cl_image_tag @image12.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/13">
-        <% @image13 = Forum.find(13) %>
+        <% @image13 = Forum.find(1) %>
         <%= cl_image_tag @image13.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/14">
-        <% @image14 = Forum.find(14) %>
+        <% @image14 = Forum.find(1) %>
         <%= cl_image_tag @image14.photo.key, height: 280, width: 200 %>
     </div>
 

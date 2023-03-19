@@ -2,6 +2,9 @@ class FollowsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @follows = Follow.all
+    @followers = Follow.where(following_id: params[:id])
+    @following = Follow.where(follower_id: params[:id])
+    @lists = List.all
   end
 
   def new

@@ -17,11 +17,11 @@
     end
     resources :lists do
     resources :bookmarks, only: [:new, :create]
-    resources :ratings, only: [:create]
   end
     resources :forums, only: [:destroy]
     resources :ratings, only: [:destroy]
     resources :posts, only: [:destroy]
     resources :comments,only: [:destroy]
     resources :bookmarks, only: [:destroy]
+    resources :lists, only: [:destroy]
   end

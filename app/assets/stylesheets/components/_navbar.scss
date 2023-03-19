@@ -1,34 +1,48 @@
-body {
-  background-color: #080F15;
-}
+
 
 p {
   color: white;
 }
 
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: center;
   background-color: #080F15;
   border-bottom: 1px solid rgb(0, 0, 0);
   box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
 
 .navbar-logo {
   width: 300px;
   display: block;
-  margin: auto;
+  margin-left: 50px;
   overflow: hidden;
+
 }
 
+.nav-link {
+color: white;
+}
+
+.nav-link:hover {
+  color: purple;
+  }
+
+
 .nav-item {
-margin-right: 20px;
+margin-left: 20px;
 font-size: 30px;
+}
+
+.navbar-titles {
+display: flex;
+width: 320px;
+margin-top: 10px;
+margin-left: 1050px;
+justify-content: space-between;
+}
+
+.navbar-titles-title {
+  font-family: 'Bebas Neue', cursive;;
+  font-size: 20px;
 }

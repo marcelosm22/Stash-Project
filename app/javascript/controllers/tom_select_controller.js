@@ -5,7 +5,7 @@ import TomSelect from "tom-select";
 export default class extends Controller {
   static values = {
     apiKey: String,
-    itens: Array
+    items: Array
   }
 
   connect() {
@@ -15,7 +15,7 @@ export default class extends Controller {
       optgroups: [
         {$order: 3, id: 'music', name: 'Music'},
         {$order: 2, id: 'movies', name: 'Movies'},
-        {$order: 1, id: 'tv shows', name: 'Tv Shows'},
+        {$order: 1, id: 'tv shows', name: 'TV Shows'},
       ],
       labelField: 'model',
       valueField: 'id',

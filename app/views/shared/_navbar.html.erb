@@ -1,17 +1,23 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-<div class="navbar-logo">
-  <img src="https://i.imgur.com/RbWRsLu.png" class="img-fluid">
-</div>
+      <div class="navbar-logo">
+        <img src="https://res.cloudinary.com/djbdn9bdv/image/upload/v1679147025/RbWRsLu_w6lpbj.png" class="img-fluid">
+      </div>
 
 
-
+      <div class="navbar-titles">
+        <p class="navbar-titles-title"><%= link_to "Movies", forums_path %></p>
+        <p class="navbar-titles-title"><%= link_to "Music", forums_path %></p>
+        <p class="navbar-titles-title"><%= link_to "TV Shows", forums_path %></p>
+        <p class="navbar-titles-title"><%= link_to "Popular Lists", lists_path %></p>
+      </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
            <li class="nav-item active">
-            <%= link_to forums_path, class: "nav-link" do %>
+            <%= link_to forums_path, class: "nav-link search" do %>
              <i  class="fa-solid fa-magnifying-glass"></i>
             <% end %>
           </li>
@@ -20,6 +26,7 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Profile", user_path(current_user.id), class: "dropdown-item"  %>
             </div>
           </li>
         <% else %>
@@ -29,5 +36,5 @@
         <% end %>
       </ul>
     </div>
-  </div>
+
 </div>
