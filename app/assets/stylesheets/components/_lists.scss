@@ -114,8 +114,8 @@ text-align: center;
 .div-list-items-grid {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-margin-left: 150px;
-margin-right: 150px;
+// margin-left: 150px;
+// margin-right: 150px;
 margin-top: 50px;
 
 row-gap: 20px;
@@ -149,12 +149,13 @@ background-color: #252726;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid #080F15;
+  padding: 24px;
 }
 
 .list-user-information {
 display: flex;
 align-items: center;
-margin-left: 150px;
+// margin-left: 150px;
 }
 
 .back-button {
@@ -173,7 +174,7 @@ font-family: 'Bebas Neue', cursive;
 
 .list-title {
 margin-top: 30px;
-margin-left: 150px;
+// margin-left: 150px;
 display: flex;
 }
 
@@ -189,7 +190,7 @@ padding-top: 15px;
 
 .new_list_form {
 display: flex;
-justify-content: center;
+justify-content: start;
 }
 
 
@@ -199,4 +200,8 @@ display: flex;
 justify-content: flex-end;
 margin-top: 50px;
 margin-right: 10px;
+}
+
+.search_form {
+  width: 80%;
 }

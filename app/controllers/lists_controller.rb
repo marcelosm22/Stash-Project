@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   def show
     @bookmark = Bookmark.new
     @forums = Forum.all
-    @items = @forums.map do |forum|
+    @itens = @forums.map do |forum|
       {
         id: forum.id,
         make: forum.category.downcase,
