@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_013951) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_133737) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,15 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_013951) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "followings", force: :cascade do |t|
-    t.bigint "follower_id"
-    t.bigint "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["followed_id"], name: "index_followings_on_followed_id"
-    t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
 
   create_table "follows", force: :cascade do |t|
@@ -124,6 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_013951) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -134,8 +126,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_013951) do
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "followings", "users", column: "followed_id"
-  add_foreign_key "followings", "users", column: "follower_id"
   add_foreign_key "lists", "users"
   add_foreign_key "posts", "forums"
   add_foreign_key "posts", "users"

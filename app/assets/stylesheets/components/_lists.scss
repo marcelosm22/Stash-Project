@@ -82,6 +82,7 @@
 
 
 
+<<<<<<< HEAD
   .list-show-img {
     position: relative;
     opacity: 1;
@@ -90,6 +91,15 @@
     backface-visibility: hidden;
     margin-right: 0;
   }
+=======
+.list-show-img {
+  position: relative;
+  width: 180px;
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+>>>>>>> master
 
   .middle {
     transition: .5s ease;
@@ -112,24 +122,51 @@
   }
 
 
-  .div-list-items-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-left: 20px;
-  margin-top: 50px;
-  }
+.div-list-items-grid {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+margin-left: 150px;
+margin-right: 150px;
+margin-top: 50px;
 
-  .delete-hover-button {
-  text-decoration: none;
-  color: white;
-  padding-right: 5px;
-  padding-left: 5px;
-  padding-top: 5px;
-  font-size: 12px;
-  padding-bottom: 5px;
-  border-radius: 10px;
-  background-color: #252726;
-  }
+row-gap: 20px;
+}
+
+.delete-hover-button {
+text-decoration: none;
+color: white;
+padding-right: 5px;
+padding-left: 5px;
+padding-top: 5px;
+font-size: 12px;
+padding-bottom: 5px;
+border-radius: 10px;
+background-color: #252726;
+}
+
+
+.the-big-list-page-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-bottom: 200px;
+  padding-top: 30px;
+  background: linear-gradient(135deg, #080F15 0%, #281d30 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #080F15;
+}
+
+.list-user-information {
+display: flex;
+align-items: center;
+margin-left: 150px;
+}
 
 
   .the-big-list-page-container {
@@ -149,6 +186,7 @@
     border: 1px solid #080F15;
   }
 
+<<<<<<< HEAD
   .list-user-information {
   display: flex;
   align-items: center;
@@ -220,3 +258,40 @@
     background-color: #005cbf;
   }
   }
+=======
+.list-title-title {
+
+font-size: 30px;
+font-family: 'Bebas Neue', cursive;
+}
+
+.list-title {
+margin-top: 30px;
+margin-left: 150px;
+display: flex;
+}
+
+
+ .username {
+margin-left: 5px;
+ }
+
+.list-owner {
+font-size: 18px;
+padding-top: 15px;
+}
+
+.new_list_form {
+display: flex;
+justify-content: center;
+}
+
+
+
+.button-list-div {
+display: flex;
+justify-content: flex-end;
+margin-top: 50px;
+margin-right: 10px;
+}
+>>>>>>> master

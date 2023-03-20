@@ -7,5 +7,6 @@ class UsersController < ApplicationController
     @follow = Follow.new
     @followers = Follow.where(following_id: params[:id])
     @following = Follow.where(follower_id: params[:id])
+    authorize @user
   end
 end

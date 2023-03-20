@@ -1,7 +1,7 @@
 
 <div class= "lists_list">
 <div class= "forum_list_title">
-  <h2>Your Lists</h2>
+  <h2>Popular Lists </h2>
 </div>
   <% @lists.each do |list| %>
     <div class="row", style="align-items: center;">
@@ -10,5 +10,4 @@
       </div>
     </div>
   <% end %>
-    <p><%= link_to "Create a new List", new_list_path, class: "button-profile-edit"  %></p>
 </div>

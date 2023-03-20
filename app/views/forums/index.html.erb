@@ -1,4 +1,7 @@
+
+<% if current_user.admin == true  %>
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
+<% end %>
 
 
 <div class="input-container">
@@ -8,8 +11,8 @@
     class: "input",
     placeholder: "Search for title or category!"
   %>
-  <%= button_tag(type: "submit", class: "btn btn-default") do %>
-  <i class="fa-solid fa-magnifying-glass"></i>
+  <%# button_tag(type: "submit", class: "btn btn-default") do %>
+  <%#i class="fa-solid fa-magnifying-glass"></i>
 <% end %>
 <% end %>
 </div>
