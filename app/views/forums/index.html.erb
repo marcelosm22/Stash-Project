@@ -1,4 +1,7 @@
+
+<% if current_user.admin == true  %>
 <%= link_to "Create a Forum but only for admins", new_forum_path %>
+<% end %>
 
 
 <div class="input-container">
