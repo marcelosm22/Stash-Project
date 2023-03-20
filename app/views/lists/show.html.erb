@@ -49,9 +49,13 @@
         <% end %>
     </div>
 
+
+
         <div class="button-list-div">
-            <%= link_to list_path(@list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } do  %>
+            <% if @list.user_id == current_user.id %>
+            <%=  link_to list_path(@list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } do  %>
             <button class="button-list"> Delete this list </button>
+            <% end %>
             <% end %>
         </div>
 
