@@ -5,8 +5,8 @@ p {
 }
 
 .navbar-lewagon {
-  justify-content: center;
   background-color: #080F15;
+  width: 100%;
   border-bottom: 1px solid rgb(0, 0, 0);
   box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 40px;
 }
@@ -15,7 +15,7 @@ p {
 .navbar-logo {
   width: 300px;
   display: block;
-  margin-left: 50px;
+  margin-left: 30px;
   overflow: hidden;
 
 }
@@ -38,7 +38,6 @@ font-size: 30px;
 display: flex;
 width: 320px;
 margin-top: 10px;
-margin-left: 1050px;
 justify-content: space-between;
 }
 

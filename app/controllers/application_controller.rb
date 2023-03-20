@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :photo])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo])
   end
 
     # Uncomment when you *really understand* Pundit!
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^forums$)|(^posts$)|(^comments$)|(^follows$)|(^bookmarks$)/
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^forums$)|(^posts$)|(^comments$)|(^follows$)|(^bookmarks$)|(^ratings$)/
   end
 
 end

@@ -31,11 +31,12 @@
        <% @list.forums.each do |forum| %>
          <div class="list-show-img">
             <%= link_to forum_path(forum) do %>
-            <% if forum.category == "Movies" || forum.category == "TV Shows" %>
-            <%= cl_image_tag (forum.photo.key).to_s, height: 260, width: 180 %>
-            <% elsif forum.category = "Music" %>
+            <% if forum.category == "Movies" %>
+            <%= cl_image_tag (forum.photo.key).to_s, height: 260, width: 200 %>
+            <% elsif forum.category == "Music" %>
+
             <%= cl_image_tag (forum.photo.key).to_s, height: 200, width: 200 %>
-            <% else %>
+            <% elsif forum.category == "TV Shows" %>
             <%= cl_image_tag (forum.photo.key).to_s, height: 280, width: 200 %>
             <% end %>
             <% end %>
