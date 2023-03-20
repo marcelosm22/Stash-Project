@@ -1,7 +1,6 @@
 .post-comments-section {
   margin-left: 500px;
   margin-right: 300px;
-  margin-left: 580px;
   padding-bottom: 500px;
 }
 
@@ -21,9 +20,7 @@
 }
 
 .post-comment-form:hover {
-
   background-color: none;
-
 }
 
 
@@ -39,16 +36,13 @@
   margin-top: 36px;
   overflow-wrap: break-word;
   p {
-
     color: #ffffff;
-
   }
 }
 
 .post-user {
 
   p{
-
     color: #ffffff;
     margin-bottom: 0;
   }
@@ -67,7 +61,7 @@
 }
 
 .post-simple-form {
-  background-color: white;
+  background-color: none;
 
 
 
@@ -128,7 +122,6 @@
 }
 
 .post-with-comments:hover{
-
   background-color: none;
 }
 #post_content:hover:read-write {
@@ -136,7 +129,7 @@
 }
 
 #comment_comment_content:hover:read-write {
-  background-color: #171d22;
+  background-color: #e8e8e8;
 }
 
 .post-content-box-left{
