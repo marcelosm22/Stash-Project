@@ -14,7 +14,7 @@
 
                 <div class= "new_list_form">
                 <div data-controller="tom_select" data-map-items-value= "<%= @itens.to_json %>"> </div>
-                <%= simple_form_for [@list, @bookmark] do |f|  %>
+                <%= simple_form_for [@list, @bookmark], html: {class: "search_form"} do |f|  %>
                 <%= f.input :forum, collection: Forum.all, input_html: { data: { controller: "tom-select", tom_select_itens_value: @itens.to_json } }, label: false %>
                 <%= f.submit "+"%>
                 <% end %>
@@ -34,6 +34,7 @@
             <% if forum.category == "Movies" %>
             <%= cl_image_tag (forum.photo.key).to_s, height: 260, width: 200 %>
             <% elsif forum.category == "Music" %>
+
             <%= cl_image_tag (forum.photo.key).to_s, height: 200, width: 200 %>
             <% elsif forum.category == "TV Shows" %>
             <%= cl_image_tag (forum.photo.key).to_s, height: 280, width: 200 %>
