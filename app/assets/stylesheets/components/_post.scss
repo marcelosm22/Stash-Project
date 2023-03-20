@@ -157,7 +157,7 @@
 .post-with-comments-inside-post {
   text-decoration: none;
   padding: 25px 25px 25px 25px;
-  border-bottom: 1px solid #AE64F2;
+  border-bottom: 1px solid #c6c6c6;
   background-color: none;
 
   a:link {
@@ -173,7 +173,7 @@
     overflow: visible;
     outline: none;
     box-shadow: none;
-    border: 1px solid #AE64F2;
+    border: 1px solid #c6c6c6;
     border-radius: 5px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -181,7 +181,6 @@
     background-color: none;
     font-size: 16px;
     resize: none;
-    -webkit-appearance:none;
   }
 
   textarea:active {
@@ -193,7 +192,7 @@
   }
 
   #comment_comment_content:hover:read-write {
-    background-color: #e8e8e8;
+    background-color: transparent;
   }
 }
 
