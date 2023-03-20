@@ -232,3 +232,36 @@ button:active {
 .search_form {
   width: 80%;
 }
+
+.ts-wrapper.form-select {
+  background-color: transparent;
+  background-image: none;
+  --color: #AE64F2;
+  padding: 0.5em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  // overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+//   z-index: 1;
+//   -webkit-text-decoration: 0;
+//   text-decoration: 0;
+  width: 500px;
+}
+
+.ts-control {
+  background-color: transparent;
+  border: none;
+}
+
+.ts-control.active {
+  background-color: transparent;
+  border: none;
+}
