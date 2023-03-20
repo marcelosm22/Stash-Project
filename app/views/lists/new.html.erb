@@ -1,10 +1,5 @@
-<div class="forum_list_title">
-<h2>Create a new list</h2>
-</div>
 <%= simple_form_for @list do |f| %>
-<%= f.text_field :title, {class:"user-create-list"} %>
-<%= f.submit "+", {class:"button"} %>
+<%= f.input :title, placeholder: 'Your List' %>
+<%= f.submit %>
 <% end %>
-<div class="back-button">
-<%= link_to "BACK", lists_path, {class: 'button-list'} %>
-</div>
+<%= link_to "BACK", lists_path %>

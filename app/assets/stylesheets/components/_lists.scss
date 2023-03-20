@@ -1,24 +1,18 @@
-.link_new_list {
+.link_new_list
+{
 text-decoration: none;
-color: #c6c6c6;
-position: relative;
+color: black;
 }
 
 .lists_list
 {
   position: relative;
-  width: 500px;
+  width: 415px;
   margin: 100px auto 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding: 10px;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #080F15;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: inset 0 0 15px whitesmoke;
 }
 
 .list_item_list_text
@@ -51,12 +45,6 @@ transition: .5s;
 .forum_list_title
 {
 text-align: center;
-}
-
-.forum_list_title h2 {
-  font-family: 'Bebas Neue', cursive;
-  color: white;
-  font-size: 60px;
 }
 
 .create_list_btn
@@ -132,7 +120,7 @@ background-color: #252726;
 }
 
 
-.the-big-list-page-container {
+.the-big-list-page-cotainer {
   display: flex;
   flex-direction: column;
   margin-left: 300px;
@@ -153,10 +141,6 @@ background-color: #252726;
 display: flex;
 align-items: center;
 margin-left: 30px;
-}
-
-.back-button {
-  margin-top: 15px;
 }
 
 p {
@@ -218,5 +202,4 @@ button:hover {
 
 button:active {
   background-color: #005cbf;
-}
 }
