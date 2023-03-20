@@ -185,7 +185,7 @@
 <div class="forum-rating">
   <%= simple_form_for [@forum, @rating] do |f| %>
     <%= f.input :score, collection: 1..10 %>
-    <%= f.submit "Rate", class: "btn btn-primary" %>
+    <%= f.submit "Rate", class: "button" %>
   <% end %>
 </div>
 
@@ -206,8 +206,8 @@
 
   <div class="post-comment-form">
     <%= simple_form_for [@forum, @post], :html=> { class: 'post-simple-form' } do |f| %>
-      <%= f.input :content, label: false, placeholder: "Write your post here" %>
-      <%= f.submit "Post", class: "button-56" %>
+      <%= f.input :content, label: false, placeholder: "Write your comment here..." %>
+      <%= f.submit "Post", class: "button" %>
     <% end %>
   </div>
   <hr size="10">
