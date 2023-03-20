@@ -32,11 +32,15 @@
             </div>
           </div>
 
+
+<% if @user.id == current_user.id %>
 <div class="edit-profile-button">
 <%= link_to "Edit Profile", edit_user_registration_path, {class:"button-profile-edit"} %>
 </div>
+<% end %>
 
 
+<% if @user.id != current_user.id %>
   <div class="follow-button">
     <% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
       <% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
@@ -48,17 +52,23 @@
       <% end %>
      <% end %>
   </div>
+  <% end %>
 
 </div>
 
 <div class="flex-user-buttons-and-create-list">
 
-<div class="create-list">
+
+<% if @user.id == current_user.id %>
+  <div class="create-list">
 <%= form_with model: @list do |f| %>
 <%= f.text_field :title, {class:"user-create-list"} %>
 <%= f.submit "+", {class:"button"} %>
 <% end %>
 </div>
+
+<% end %>
+
 
 <div class="user-button-lists">
 <% @lists.each do |list| %>
