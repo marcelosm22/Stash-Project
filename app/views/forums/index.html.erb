@@ -4,6 +4,7 @@
 <% end %>
 
 
+
 <div class="input-container">
 <%= form_with url: forums_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
@@ -18,6 +19,7 @@
 </div>
 
 
+<%= link_to "-MY LISTS", lists_path, {class: 'button-list'} %>
 
 
 
