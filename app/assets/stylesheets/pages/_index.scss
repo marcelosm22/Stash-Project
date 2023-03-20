@@ -1,44 +1,45 @@
 // Import page-specific CSS files here.
 
 .search-index-flex {
-display: flex;
-margin-left: 20px;
-margin-bottom: 20px;
-}
+  display: flex;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  }
 
 
-.div-index-search-results {
-margin-left: 300px;
-margin-right: 300px;
-margin-top: 50px;
-padding-bottom: 30px;
-padding-top: 30px;
-background-color: #080F15;
-box-shadow: 0 1px 4px rgba(0,0,0,0.3), 0 0 15px;
-}
+  .div-index-search-results {
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: #080F15;
+  box-shadow: 0 1px 10px #AE64F2, 0 0 20px;
+  border-radius: 10px;
+  }
 
 
-.search-index-title {
-margin-left: 20px;
-margin-bottom: 28px;
-font-size: 70px;
-font-family: 'Bebas Neue', cursive;
-color: #AE64F2;
-}
+  .search-index-title {
+  margin-left: 20px;
+  margin-bottom: 28px;
+  font-size: 70px;
+  font-family: 'Bebas Neue', cursive;
+  color: #FFF4DE;
+  }
 
 
-.img-index-div {
-margin-right: 5px;
-}
+  .img-index-div {
+  margin-right: 5px;
+  }
 
-.img-index-div:hover {
-transform: scale(1.2);
-opacity: 0.88;
-}
+  .img-index-div:hover {
+  transform: scale(1.2);
+  opacity: 0.88;
+  }
 
-.search-index-grid {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-row-gap: 10px;
-margin-left: 20px;
-}
+  .search-index-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  margin-left: 20px;
+  }
