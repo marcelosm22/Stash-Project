@@ -6,7 +6,7 @@
   margin-bottom: 50px;
   padding-bottom: 200px;
   padding-top: 30px;
-  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
+  background: linear-gradient(135deg, #080F15 0%, #281d30 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
@@ -18,16 +18,19 @@
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
-margin-left: 20px;
+margin-left: 30px;
+margin-top: 50px;
 }
 .user-card {
   display: flex;
   justify-content: center;
+
 }
 
 .followers, .following, .number-of-lists {
 display: flex;
 justify-content: space-between;
+margin-top: 20px;
 }
 
 
@@ -42,6 +45,7 @@ justify-content: space-between;
 margin-top: 20px;
 display: flex;
 justify-content: center;
+margin-top: 20px;
 }
 
 .lists-show {
@@ -50,11 +54,14 @@ justify-content: center;
 
 .create-list {
   margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  margin-left: 220px;
 }
 
 .user-button-lists {
 display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr ;
 width: 700px;
 row-gap: 20px;
 column-gap: 20px;
@@ -64,7 +71,7 @@ column-gap: 20px;
 .edit-profile-button {
 display: flex;
 justify-content: center;
-margin-top: 7px;
+margin-top: 30px;
 }
 
 .flex-user-buttons-and-create-list {

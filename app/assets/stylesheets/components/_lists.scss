@@ -84,11 +84,10 @@ text-align: center;
 
 .list-show-img {
   position: relative;
+  width: 180px;
   opacity: 1;
-  width: 200px;
   transition: .5s ease;
   backface-visibility: hidden;
-  margin-right: 0;
 }
 
 .middle {
@@ -114,9 +113,12 @@ text-align: center;
 
 .div-list-items-grid {
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-margin-left: 20px;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+margin-left: 150px;
+margin-right: 150px;
 margin-top: 50px;
+
+row-gap: 20px;
 }
 
 .delete-hover-button {
@@ -138,10 +140,10 @@ background-color: #252726;
   margin-left: 300px;
   margin-right: 300px;
   margin-top: 50px;
-  padding-bottom: 300px;
-  padding-top: 50px;
   margin-bottom: 50px;
-  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
+  padding-bottom: 200px;
+  padding-top: 30px;
+  background: linear-gradient(135deg, #080F15 0%, #281d30 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
@@ -152,7 +154,7 @@ background-color: #252726;
 .list-user-information {
 display: flex;
 align-items: center;
-margin-left: 30px;
+margin-left: 150px;
 }
 
 .back-button {
@@ -171,52 +173,31 @@ font-family: 'Bebas Neue', cursive;
 
 .list-title {
 margin-top: 30px;
-margin-left: 20px;
+margin-left: 150px;
 display: flex;
 }
 
-.list-search-show {
-width: 300px;
-margin-left: 300px;
 
-.new_list_form
-{
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: black;
+ .username {
+margin-left: 5px;
+ }
 
+.list-owner {
+font-size: 18px;
+padding-top: 15px;
 }
 
-form {
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.new_list_form {
+display: flex;
+justify-content: center;
 }
 
-label, select {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
 
-button {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
 
-button:hover {
-  background-color: #0069d9;
-}
-
-button:active {
-  background-color: #005cbf;
+.button-list-div {
+display: flex;
+justify-content: flex-end;
+margin-top: 50px;
+margin-right: 10px;
 }
 }

@@ -6,7 +6,7 @@
   margin-bottom: 50px;
   padding-bottom: 200px;
   padding-top: 30px;
-  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
+  background: linear-gradient(135deg, #080F15 0%, #281d30 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(20px);
@@ -39,7 +39,7 @@ width: 300px;
 
 .follow-user-profile-index-div:hover {
   transform: scale(1.07);
-  background: #c099e5;
+  background: #1d1425;
 }
 
 .following-link {
@@ -66,6 +66,6 @@ color: white;
 }
 
 .number-of-lists:hover {
-  border-bottom: solid thin #c099e5;
+  border-bottom: solid thin #cca0f6;
   margin-bottom: 3px;
 }
