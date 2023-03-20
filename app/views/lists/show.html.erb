@@ -42,7 +42,7 @@
                   <div class="middle">
                      <div class="list-delete-button">
                         <% bookmark = Bookmark.find_by(list: @list, forum: forum ) %>
-                        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete}, class: "delete-hover-button" %>
+                        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this forum?"}, class: "delete-hover-button" %>
                      </div>
                   </div>
            </div>
