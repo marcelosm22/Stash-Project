@@ -1,7 +1,6 @@
 .post-comments-section {
   margin-left: 500px;
   margin-right: 300px;
-  margin-left: 580px;
   padding-bottom: 500px;
 }
 
@@ -21,9 +20,7 @@
 }
 
 .post-comment-form:hover {
-
   background-color: none;
-
 }
 
 
@@ -39,16 +36,13 @@
   margin-top: 36px;
   overflow-wrap: break-word;
   p {
-
     color: #ffffff;
-
   }
 }
 
 .post-user {
 
   p{
-
     color: #ffffff;
     margin-bottom: 0;
   }
@@ -128,7 +122,6 @@
 }
 
 .post-with-comments:hover{
-
   background-color: none;
 }
 #post_content:hover:read-write {
@@ -136,7 +129,7 @@
 }
 
 #comment_comment_content:hover:read-write {
-  background-color: #171d22;
+  background-color: #e8e8e8;
 }
 
 .post-content-box-left{
@@ -180,7 +173,7 @@
     overflow: visible;
     outline: none;
     box-shadow: none;
-    border: 1px solid #c6c6c6;
+    border: 1px solid #AE64F2;
     border-radius: 5px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -188,6 +181,7 @@
     background-color: none;
     font-size: 16px;
     resize: none;
+    -webkit-appearance:none;
   }
 
   textarea:active {
@@ -199,7 +193,7 @@
   }
 
   #comment_comment_content:hover:read-write {
-    background-color: transparent;
+    background-color: #e8e8e8;
   }
 }
 
