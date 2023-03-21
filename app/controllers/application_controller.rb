@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo])
   end
 
+  def default_url_options
+    { host: ENV["www.artdialogue.me"] || "localhost:3000" }
+  end
+
+
     # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # def user_not_authorized
