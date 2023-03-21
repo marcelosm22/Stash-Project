@@ -4,7 +4,7 @@
       <div class="user-card-container">
           <div class="user-card">
             <%= link_to user_path(@user)do %>
-            <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
+            <%= cl_image_tag (@user.photo.key).to_s, height: 250, width: 250, :background=>"#080F15",:radius=>"max", :crop=>"fill"%>
             <% end %>
           </div>
 

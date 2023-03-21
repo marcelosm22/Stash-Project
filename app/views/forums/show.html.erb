@@ -1,4 +1,8 @@
 <%# Average Score Method %>
+<% content_for :meta_title, "#{@forum.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @forum.creator %>
+<% content_for :meta_image, cl_image_path(@forum.photo.key) %>
+
 
 <% ratings_array = [] %>
 <% @ratings.each do |rating| %>
@@ -190,7 +194,7 @@
 
               <div class="rate-form">
                             <%= form_with model: [@forum, @rating] do |f| %>
-                            <%= f.number_field :score, {class:"rate-create-list"} %>
+                            <%= f.number_field :score, {class:"rate-create-list", min:1, max: 10} %>
                             <%= f.submit "Rate", {class:"rate-button-forum"} %>
                             <% end %>
               </div>
