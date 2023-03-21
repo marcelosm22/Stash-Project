@@ -3,21 +3,31 @@
     <div class="list-user-information">
         <div class="list-profile-img">
           <%= link_to user_path(@list.user) do %>
-          <%= cl_image_tag (@list.user.photo.key).to_s, height: 50, width: 50, crop: :fill, :radius => "max" %>
+          <%= cl_image_tag (@list.user.photo.key).to_s, height: 80, width: 80, crop: :fill, :radius => "max" %>
           <% end %>
+             <div class="username">
+                <p class= "list-owner">@<%= @list.user.username%></p>
+             </div>
         </div>
-        <div class="username">
-          <p class= "list-owner">@<%= @list.user.username%></p>
+
+        <div class="button-list-div">
+            <% if @list.user_id == current_user.id %>
+               <%=  link_to list_path(@list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } do  %>
+              <button class="delete-button-list"> Delete this list </button>
+            <% end %>
+            <% end %>
         </div>
+
     </div>
 
 
                 <div class= "new_list_form">
-                <div data-controller="tom_select" data-map-items-value= "<%= @itens.to_json %>"> </div>
-                <%= simple_form_for [@list, @bookmark], html: {class: "search_form"} do |f|  %>
-                <%= f.input :forum, collection: Forum.all, input_html: { data: { controller: "tom-select", tom_select_itens_value: @itens.to_json } }, label: false %>
-                <%= f.submit "+"%>
-                <% end %>
+                      <div data-controller="tom_select" data-map-items-value= "<%= @itens.to_json %>"></div>
+                    <div class="add-to-my-list">
+                      <%= simple_form_for [@list, @bookmark], html: {class: "search_form"} do |f|  %>
+                      <%= f.input :forum, collection: Forum.all, input_html: { data: { controller: "tom-select", tom_select_itens_value: @itens.to_json } }, label: false %>
+                      <% end %>
+                    </div>
                 </div>
 
                 <div class="list-title">
@@ -27,38 +37,29 @@
 
 
 
-    <div class="div-list-items-grid">
-       <% @list.forums.each do |forum| %>
-         <div class="list-show-img">
-            <%= link_to forum_path(forum) do %>
-            <% if forum.category == "Movies" %>
-            <%= cl_image_tag (forum.photo.key).to_s, height: 260, width: 200 %>
-            <% elsif forum.category == "Music" %>
-
-            <%= cl_image_tag (forum.photo.key).to_s, height: 200, width: 200 %>
-            <% elsif forum.category == "TV Shows" %>
-            <%= cl_image_tag (forum.photo.key).to_s, height: 280, width: 200 %>
-            <% end %>
-            <% end %>
-                  <div class="middle">
-                     <div class="list-delete-button">
-                        <% bookmark = Bookmark.find_by(list: @list, forum: forum ) %>
-                        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this forum?"}, class: "delete-hover-button" %>
-                     </div>
-                  </div>
-           </div>
-        <% end %>
-    </div>
-
+      <div class="div-list-items-grid">
+          <% @list.forums.each do |forum| %>
+            <div class="list-show-img">
+              <%= link_to forum_path(forum) do %>
+              <% if forum.category == "Movies" %>
+              <%= cl_image_tag (forum.photo.key).to_s, height: 280, width: 200 %>
+              <% elsif forum.category == "Music" %>
+              <%= cl_image_tag (forum.photo.key).to_s, height: 200, width: 200 %>
+              <% elsif forum.category == "TV Shows" %>
+              <%= cl_image_tag (forum.photo.key).to_s, height: 280, width: 200 %>
+              <% end %>
+              <% end %>
+              <div class="middle">
+                <div class="list-delete-button">
+                    <% bookmark = Bookmark.find_by(list: @list, forum: forum ) %>
+                    <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this forum?"}, class: "delete-hover-button" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      </div>
 
 
-        <div class="button-list-div">
-            <% if @list.user_id == current_user.id %>
-            <%=  link_to list_path(@list),  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } do  %>
-            <button class="button-list"> Delete this list </button>
-            <% end %>
-            <% end %>
-        </div>
 
 
 

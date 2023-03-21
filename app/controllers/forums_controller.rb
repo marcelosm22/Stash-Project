@@ -6,6 +6,7 @@ class ForumsController < ApplicationController
     @ratings = Rating.where(forum_id: params[:id])
     @rating = Rating.new
     @comment = Comment.new
+    @bookmarks = Bookmark.all
   end
 
   def index

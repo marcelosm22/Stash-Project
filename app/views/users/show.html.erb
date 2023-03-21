@@ -1,28 +1,30 @@
 <div class="user-container-flex-div">
 
-<div class="user-card-container">
-    <div class="user-card">
-      <%= link_to user_path(@user)do %>
-      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250 %>
-      <% end %>
-    </div>
+
+      <div class="user-card-container">
+          <div class="user-card">
+            <%= link_to user_path(@user)do %>
+            <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
+            <% end %>
+          </div>
+
 
       <div class="user-card-details-text">
          <p><strong>@<%= @user.username %></strong></p>
       </div>
 
       <div class="follows-container">
-      <%= link_to user_follows_path(@user.id) do %>
-        <div class="followers">
-          <p>Followers</p>
-          <%= @followers.count %>
-        </div>
-        <% end  %>
         <%= link_to user_follows_path(@user.id) do %>
-        <div class="followers">
-          <p>Following</p>
-          <%= @following.count %>
-        </div>
+          <div class="followers">
+            <p>Followers</p>
+            <%= @followers.count %>
+          </div>
+        <% end  %>
+            <%= link_to user_follows_path(@user.id) do %>
+          <div class="followers">
+            <p>Following</p>
+            <%= @following.count %>
+          </div>
         <% end %>
       </div>
           <div class="number-of-lists-container">
@@ -33,47 +35,48 @@
           </div>
 
 
-<% if @user.id == current_user.id %>
-<div class="edit-profile-button">
-<%= link_to "Edit Profile", edit_user_registration_path, {class:"button-profile-edit"} %>
-</div>
-<% end %>
-
-
-<% if @user.id != current_user.id %>
-  <div class="follow-button">
-    <% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
-      <% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
-      <%= link_to 'Unfollow', user_follow_path(@user, @follow.id),
-    data: {turbo_method: :delete}, class:"unfollow-button"  %>
-   <% else %>
-      <%= form_with model: [@user, @follow] do |f| %>
-      <%= f.submit "Follow", {class:"button-profile-edit"} %>
+      <% if @user.id == current_user.id %>
+        <div class="edit-profile-button">
+          <%= link_to "Edit Profile", edit_user_registration_path, {class:"button-profile-edit"} %>
+        </div>
       <% end %>
-     <% end %>
-  </div>
-  <% end %>
+
+
+    <% if @user.id != current_user.id %>
+       <div class="follow-button">
+            <% if Follow.where(follower_id: current_user.id, following_id: params[:id]).exists? %>
+              <% @follow = Follow.find_by(follower_id: current_user.id, following_id: params[:id]) %>
+              <%= link_to 'Unfollow', user_follow_path(@user, @follow.id),
+              data: {turbo_method: :delete}, class:"unfollow-button"  %>
+            <% else %>
+              <%= form_with model: [@user, @follow] do |f| %>
+              <%= f.submit "Follow", {class:"button-profile-edit"} %>
+            <% end %>
+            <% end %>
+      </div>
+    <% end %>
 
 </div>
 
-<div class="flex-user-buttons-and-create-list">
 
 
-<% if @user.id == current_user.id %>
-  <div class="create-list">
-<%= form_with model: @list do |f| %>
-<%= f.text_field :title, {class:"user-create-list"} %>
-<%= f.submit "+", {class:"button"} %>
-<% end %>
-</div>
-
-<% end %>
+      <div class="flex-user-buttons-and-create-list">
 
 
-<div class="user-button-lists">
-<% @lists.each do |list| %>
-<%= link_to list.title, list_path(list), {class:"button-list"} %>
-<% end %>
-</div>
+          <% if @user.id == current_user.id %>
+            <div class="create-list">
+                <%= form_with model: @list do |f| %>
+                <%= f.text_field :title, {class:"user-create-list"} %>
+                <% end %>
+            </div>
+          <% end %>
 
+
+          <div class="user-button-lists">
+            <% @lists.each do |list| %>
+            <%= link_to list.title, list_path(list), {class:"button-list"} %>
+            <% end %>
+          </div>
+
+      </div>
 </div>
