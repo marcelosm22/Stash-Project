@@ -11,16 +11,15 @@
 
 
 
-   <div class="row">
-    <div class="col">
+  <div class="row">
+        <div class="col">
 
-              <div class="navbar-titles">
-                <p class="navbar-titles-title"><%= link_to "Movies", forums_path %></p>
-                <p class="navbar-titles-title"><%= link_to "Music", forums_path %></p>
-                <p class="navbar-titles-title"><%= link_to "TV Shows", forums_path %></p>
-                <p class="navbar-titles-title"><%= link_to "My lists", user_path(current_user.id) %></p>
-                <p class="navbar-titles-title"><%= link_to "Popular Lists", lists_path %></p>
-              </div>
+                  <div class="navbar-titles">
+                    <p class="navbar-titles-title"><%= link_to "Movies", forums_path %></p>
+                    <p class="navbar-titles-title"><%= link_to "Music", forums_path %></p>
+                    <p class="navbar-titles-title"><%= link_to "TV Shows", forums_path %></p>
+                    <p class="navbar-titles-title"><%= link_to "Popular Lists", lists_path %></p>
+                  </div>
 
 
         </div>
@@ -38,8 +37,8 @@
               <li class="nav-item dropdown">
                 <%= cl_image_tag (current_user.photo.key).to_s,:radius => "max", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <%= link_to "Profile", user_path(current_user.id), class: "dropdown-item"  %>
                   <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                  <%= link_to "Profile", user_path(current_user.id), class: "dropdown-item"  %>
                 </div>
               </li>
             <% else %>
