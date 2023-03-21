@@ -19,6 +19,7 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid #080F15;
+    margin-bottom: 500px;
   }
 
   .list_item_list_text
@@ -113,8 +114,9 @@
 .div-list-items-grid {
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-// margin-left: 150px;
-// margin-right: 150px;
+margin-left: 160px;
+margin-right: 150px;
+row-gap: 15px;
 margin-top: 50px;
 }
 
@@ -131,28 +133,12 @@ background-color: #252726;
 }
 
 
-.the-big-list-page-container {
-  display: flex;
-  flex-direction: column;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 50px;
-  padding-bottom: 300px;
-  padding-top: 50px;
-  margin-bottom: 50px;
-  background: linear-gradient(135deg, #080F15 0%, #AE64F2 100%);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid #080F15;
-  padding: 24px;
-}
-
 .list-user-information {
 display: flex;
 align-items: center;
-// margin-left: 150px;
+justify-content: space-between;
+margin-left: 160px;
+margin-right: 20px;
 }
 
 
@@ -181,7 +167,7 @@ font-family: 'Bebas Neue', cursive;
 
 .list-title {
 margin-top: 30px;
-// margin-left: 150px;
+margin-left: 160px;
 display: flex;
 }
 
@@ -195,15 +181,10 @@ margin-left: 300px;
   border-radius: 4px;
   padding: 1rem;
   max-width: 400px;
-  margin: 0 auto;
   background-color: black;
 
 }
 
-.new_list_form {
-display: flex;
-justify-content: start;
-}
 
 label, select {
   font-size: 1.2rem;
@@ -253,7 +234,8 @@ button:active {
 //   z-index: 1;
 //   -webkit-text-decoration: 0;
 //   text-decoration: 0;
-  width: 500px;
+width: 1280px;
+
 }
 
 .ts-control {
@@ -264,4 +246,9 @@ button:active {
 .ts-control.active {
   background-color: transparent;
   border: none;
+}
+
+.list-owner {
+margin-top: 10px;
+margin-left: 10px;
 }

@@ -7,7 +7,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     authorize @list
     @bookmark = Bookmark.new
     @forums = Forum.all

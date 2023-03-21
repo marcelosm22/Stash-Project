@@ -7,13 +7,15 @@ margin-right: 200px;
 
 
 .forum-show-title {
-font-size: 35px;
+font-size: 45px;
+font-family: 'Bebas Neue', cursive;
 font-weight: bold;
 margin-bottom: 50px;
 }
 
 .forum-show-year, .forum-show-creator, .forum-show-category {
-  font-size: 25px;
+  font-size: 35px;
+  font-family: 'Bebas Neue', cursive;
 }
 
 .forum-show-rating-description-container {
@@ -37,9 +39,8 @@ margin-left: 40px;
 
 .forum-page-show-top {
   display: flex;
-  margin-left: 300px;
+  margin-left: 580px;
   margin-right: 300px;
-  justify-content: space-between;
 }
 
 // .rating-circle {
@@ -69,4 +70,75 @@ margin-left: 40px;
 
 .forum-show-description {
   padding: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+
+.forum-user-ranking-information {
+display: flex;
+justify-content: space-between;
+margin-left: 580px;
+margin-right: 300px;
+margin-top: 50px;
+border-bottom: solid thin gray;
+}
+
+.forum-user-text-ranking {
+font-size: 35px;
+font-family: 'Bebas Neue', cursive;
+}
+
+.rating-circle {
+margin-top:  115px;
+}
+
+.div-div {
+display: flex;
+margin-top: 30px;
+margin-left: 580px;;
+justify-content: flex-start;
+}
+
+
+.rate-create-list {
+   --color: #AE64F2;
+  padding: 0.3em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  text-decoration: 0;
+  width: 500px;
+}
+
+
+
+.rate-button-forum {
+  --color: #AE64F2;
+  padding: 0.3em 1.0em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  width: 200px;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  text-decoration: 0;
 }

@@ -17,14 +17,10 @@
   <% case %>
   <% when @forum.category == "Music" %>
 
-  <div class="forum-page-show-top">
-  <div class="forum-show-img">
-  <%= cl_image_tag @forum.photo.key, height: 280, width: 280 %>
-
-
-
-
-  </div>
+   <div class="forum-page-show-top">
+     <div class="forum-show-img">
+       <%= cl_image_tag @forum.photo.key, height: 280, width: 280 %>
+     </div>
 
 
   <div class="forum-show-description">
@@ -182,18 +178,25 @@
   <% end %>
 </div>
 
-<div class="forum-rating">
-  <%= simple_form_for [@forum, @rating] do |f| %>
-    <%= f.input :score, collection: 1..10 %>
-    <%= f.submit "Rate", class: "button" %>
-  <% end %>
-</div>
 
 
+      <div class="forum-user-ranking-information">
+        <p class="forum-user-text-ranking"><%= @ratings.count %> Members</p>
+        <p class="forum-user-text-ranking"> Saved in <%= @bookmarks.count %> lists</p>
+        <p class="forum-user-text-ranking"> Score <%= rounded_average_score %></p>
+      </div>
+
+    <div class="div-div">
+
+              <div class="rate-form">
+                            <%= form_with model: [@forum, @rating] do |f| %>
+                            <%= f.number_field :score, {class:"rate-create-list"} %>
+                            <%= f.submit "Rate", {class:"rate-button-forum"} %>
+                            <% end %>
+              </div>
 
 
-
-
+            </div>
 
 
 

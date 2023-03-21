@@ -1,13 +1,14 @@
 
-<div class= "lists_list">
-<div class= "forum_list_title">
-  <h2>Popular Lists </h2>
-</div>
-  <% @lists.each do |list| %>
-    <div class="row", style="align-items: center;">
-      <div class="col-11">
-          <p class= "button-list"><%= link_to list.title, list_path(list), class: "link_new_list" %></p>
-      </div>
+  <div class= "lists_list">
+    <div class= "forum_list_title">
+       <h2>Popular Lists </h2>
     </div>
-  <% end %>
-</div>
+
+        <% @lists.each do |list| %>
+            <div class="row", style="align-items: center;">
+              <div class="col-11">
+                <p class= "button-list"><%= link_to list.title, list_path(list), class: "link_new_list" %></p>
+              </div>
+            </div>
+        <% end %>
+  </div>

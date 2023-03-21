@@ -8,5 +8,6 @@ class UsersController < ApplicationController
     @followers = Follow.where(following_id: params[:id])
     @following = Follow.where(follower_id: params[:id])
     authorize @user
+    @bookmarks = Bookmark.all
   end
 end
