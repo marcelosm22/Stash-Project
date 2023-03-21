@@ -1,24 +1,24 @@
 require "open-uri"
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929952/122774271_mcwuxr.jpg")
-user_1 = User.new(username: "marcelosm22", password: "123456", email: "marcelo@gmail.com" )
+user_1 = User.new(username: "marcelosm22", password: "123456", email: "marcelo@gmail.com", admin: true )
 user_1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user_1.save!
 
 
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929984/120477867_yph5zq.png")
-user_2 = User.new(username: "wieland2", password: "123456", email: "wagner@gmail.com" )
+user_2 = User.new(username: "wieland2", password: "123456", email: "wagner@gmail.com", admin: true )
 user_2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user_2.save!
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929932/122754806_mmzn0v.jpg")
-user_3 = User.new(username: "toni8400", password: "123456", email: "antonio@gmail.com" )
+user_3 = User.new(username: "toni8400", password: "123456", email: "antonio@gmail.com", admin: true )
 user_3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user_3.save!
 
 file = URI.open("https://res.cloudinary.com/djbdn9bdv/image/upload/v1678929970/122709872_sjtwao.jpg")
-user_4 = User.new(username: "rudamafra", password: "123456", email: "ruda@gmail.com" )
+user_4 = User.new(username: "rudamafra", password: "123456", email: "ruda@gmail.com", admin: true )
 user_4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 user_4.save!
 
