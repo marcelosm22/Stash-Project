@@ -190,7 +190,7 @@
 
               <div class="rate-form">
                             <%= form_with model: [@forum, @rating] do |f| %>
-                            <%= f.number_field :score, {class:"rate-create-list"} %>
+                            <%= f.number_field :score, {class:"rate-create-list", min:1, max: 10} %>
                             <%= f.submit "Rate", {class:"rate-button-forum"} %>
                             <% end %>
               </div>

@@ -3,7 +3,7 @@
     <div class="list-user-information">
         <div class="list-profile-img">
           <%= link_to user_path(@list.user) do %>
-          <%= cl_image_tag (@list.user.photo.key).to_s, height: 80, width: 80, crop: :fill, :radius => "max" %>
+          <%= cl_image_tag (@list.user.photo.key).to_s, height: 80, width: 80, :background=>"#080F15", crop: :fill, :radius => "max" %>
           <% end %>
              <div class="username">
                 <p class= "list-owner">@<%= @list.user.username%></p>

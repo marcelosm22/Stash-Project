@@ -10,7 +10,7 @@ margin-right: 200px;
 font-size: 45px;
 font-family: 'Bebas Neue', cursive;
 font-weight: bold;
-margin-bottom: 50px;
+margin-bottom: 40px;
 }
 
 .forum-show-year, .forum-show-creator, .forum-show-category {
@@ -39,7 +39,8 @@ margin-left: 40px;
 
 .forum-page-show-top {
   display: flex;
-  margin-left: 580px;
+  justify-content: space-between;
+  margin-left: 300px;
   margin-right: 300px;
 }
 
@@ -70,15 +71,14 @@ margin-left: 40px;
 
 .forum-show-description {
   padding: 10px;
-  margin-left: 60px;
-  margin-right: 60px;
+
 }
 
 
 .forum-user-ranking-information {
 display: flex;
 justify-content: space-between;
-margin-left: 580px;
+margin-left: 300px;
 margin-right: 300px;
 margin-top: 50px;
 border-bottom: solid thin gray;
@@ -90,13 +90,13 @@ font-family: 'Bebas Neue', cursive;
 }
 
 .rating-circle {
-margin-top:  115px;
+margin-top:  50px;
 }
 
 .div-div {
 display: flex;
 margin-top: 30px;
-margin-left: 580px;;
+margin-left: 300px;;
 justify-content: flex-start;
 }
 

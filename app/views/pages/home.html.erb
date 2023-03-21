@@ -17,7 +17,7 @@
 <div class="div home-music-grid">
 <div class="music-amy-home-top-div">
 
-<% @amy = Forum.find(12) %>
+<% @amy = Forum.find(16) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@amy) do %>
@@ -45,7 +45,7 @@
 
 <div class="music-amy-home-top-div">
 
-<% @amy = Forum.find(12) %>
+<% @amy = Forum.find(17) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@amy) do %>
@@ -61,7 +61,7 @@
 
 <div class="home-rating-cirlce">
  <div class="c100 p100 medium small green">
-          <span> 8.5 </span>
+          <span> 9.0 </span>
           <div class="slice">
             <div class="bar"></div>
             <div class="fill"></div>
@@ -73,7 +73,7 @@
 
 <div class="music-amy-home-top-div">
 
-<% @amy = Forum.find(12) %>
+<% @amy = Forum.find(18) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@amy) do %>
@@ -101,7 +101,7 @@
 
 <div class="music-elliot-home-top-div">
 
-<% @elliot = Forum.find(12) %>
+<% @elliot = Forum.find(19) %>
 
 <div class="home-music-img-div">
 <%= link_to forum_path(@elliot) do %>
@@ -117,7 +117,7 @@
 
 <div class="home-rating-cirlce">
  <div class="c100 p100 medium small green">
-          <span> 9.2 </span>
+          <span> 7.5 </span>
           <div class="slice">
             <div class="bar"></div>
             <div class="fill"></div>
@@ -144,42 +144,36 @@
 
     <div class="item">
       <a href="forums/2">
-        <% @image2 = Forum.find(1) %>
+        <% @image2 = Forum.find(2) %>
         <%= cl_image_tag @image2.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/3">
-        <% @image3 = Forum.find(1) %>
+        <% @image3 = Forum.find(3) %>
         <%= cl_image_tag @image3.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/4">
-        <% @image4 = Forum.find(1) %>
+        <% @image4 = Forum.find(4) %>
         <%= cl_image_tag @image4.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/5">
-        <% @image5 = Forum.find(1) %>
+        <% @image5 = Forum.find(5) %>
         <%= cl_image_tag @image5.photo.key, height: 280, width: 200 %>
       </a>
     </div>
 
     <div class="item">
       <a href="forums/6">
-        <% @image6 = Forum.find(1) %>
+        <% @image6 = Forum.find(6) %>
         <%= cl_image_tag @image6.photo.key, height: 280, width: 200 %>
-    </div>
-
-      <div class="item">
-      <a href="forums/7">
-        <% @image7 = Forum.find(1) %>
-        <%= cl_image_tag @image7.photo.key, height: 280, width: 200 %>
     </div>
 
     <a href="#section2" class="arrow__btn right-arrow">›</a>
@@ -189,44 +183,38 @@
     <a href="#section1" class="arrow__btn left-arrow">‹</a>
     <div class="item">
       <a href="forums/8">
-        <% @image8 = Forum.find(1) %>
+        <% @image8 = Forum.find(7) %>
         <%= cl_image_tag @image8.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/9">
-        <% @image9 = Forum.find(1) %>
+        <% @image9 = Forum.find(8) %>
         <%= cl_image_tag @image9.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/10">
-        <% @image10 = Forum.find(1) %>
+        <% @image10 = Forum.find(9) %>
         <%= cl_image_tag @image10.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/11">
-        <% @image11 = Forum.find(1) %>
+        <% @image11 = Forum.find(10) %>
         <%= cl_image_tag @image11.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/12">
-        <% @image12 = Forum.find(1) %>
+        <% @image12 = Forum.find(11) %>
         <%= cl_image_tag @image12.photo.key, height: 280, width: 200 %>
     </div>
 
     <div class="item">
       <a href="forums/13">
-        <% @image13 = Forum.find(1) %>
+        <% @image13 = Forum.find(12) %>
         <%= cl_image_tag @image13.photo.key, height: 280, width: 200 %>
-    </div>
-
-    <div class="item">
-      <a href="forums/14">
-        <% @image14 = Forum.find(1) %>
-        <%= cl_image_tag @image14.photo.key, height: 280, width: 200 %>
     </div>
 
     </section>
