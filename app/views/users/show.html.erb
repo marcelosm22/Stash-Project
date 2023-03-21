@@ -1,11 +1,13 @@
 <div class="user-container-flex-div">
 
+
       <div class="user-card-container">
           <div class="user-card">
             <%= link_to user_path(@user)do %>
             <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
             <% end %>
           </div>
+
 
       <div class="user-card-details-text">
          <p><strong>@<%= @user.username %></strong></p>
