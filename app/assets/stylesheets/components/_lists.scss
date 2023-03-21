@@ -100,6 +100,9 @@
 
   .list-show-img:hover {
     opacity: 0.8;
+    border: solid;
+    border-right: solid;
+    border-color: #22ff00 ;
   }
 
   .list-show-img:hover .middle {
@@ -117,6 +120,7 @@ grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 margin-left: 160px;
 margin-right: 150px;
 row-gap: 15px;
+column-gap: 15px;
 margin-top: 50px;
 }
 
@@ -173,7 +177,7 @@ display: flex;
 
 .list-search-show {
 width: 300px;
-margin-left: 300px;
+margin-left: 400px;
 
 .new_list_form
 {
@@ -227,6 +231,7 @@ button:active {
   transition: .5s;
   font-weight: 400;
   font-size: 17px;
+  margin-left: 58px;
   border: 1px solid;
   font-family: inherit;
   text-transform: uppercase;
@@ -234,7 +239,7 @@ button:active {
 //   z-index: 1;
 //   -webkit-text-decoration: 0;
 //   text-decoration: 0;
-width: 1280px;
+width: 800px;
 
 }
 

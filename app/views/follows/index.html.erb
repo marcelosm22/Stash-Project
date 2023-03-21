@@ -3,7 +3,7 @@
   <div class="user-card-container">
     <div class="user-card">
       <%= link_to user_path(@user)do %>
-      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :radius => "max" %>
+      <%= cl_image_tag (@user.photo.key).to_s, height: 250, width:  250, :background=>"#080F15", :radius => "max" %>
       <% end %>
     </div>
 
@@ -35,14 +35,14 @@
 
   </div>
 
-    <div class="followers-container">
+    <div class="followers-container">p
       <h3>Followers</h3>
       <% @user.followers.each do |follower| %>
       <%= link_to follower do %>
       <div class="follow-user-profile-index-div">
         <div class="follow-img-profile">
         <div class="follower-profile-img">
-         <%= cl_image_tag follower.photo.key.to_s, width: 50, height: 50, :radius => "max", :gravity => "face" %>
+         <%= cl_image_tag follower.photo.key.to_s, width: 50, height: 50, :background=>"#080F15", :radius => "max", :gravity => "face" %>
         </div>
         </div>
         <div class="follow-username-index">
@@ -59,7 +59,7 @@
       <%= link_to following do %>
       <div class="follow-user-profile-index-div">
       <div class="follower-profile-img">
-         <%= cl_image_tag following.photo.key.to_s, width: 50, height: 50, :radius => "max", :gravity => "face"%>
+         <%= cl_image_tag following.photo.key.to_s, width: 50, height: 50,:radius => "max", :background=>"#080F15", :gravity => "face"%>
       </div>
           <p class= "following-link">@<%= following.username %></p>
       </div>
